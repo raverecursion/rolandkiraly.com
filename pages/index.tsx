@@ -83,25 +83,26 @@ export default function Home(): React.ReactElement {
                 fontSize='xl'
                 mt={2}
               >
-                Welcome to my website! I use this to show some of my{' '}
+                Welcome to my website! You can find some of my{' '}
                 <Link href='/projects' passHref>
                   <ChakraLink>projects</ChakraLink>
                 </Link>{' '}
-                off, and test things out. You can see what music I am listening to on the{' '}
+                , and test things out.
+                {/* You can see what music I am listening to on the{' '}
                 <Link href='/music' passHref>
                   <ChakraLink>music page</ChakraLink>
                 </Link>{' '}
-                or the {/* //TODO: add links */}
+                or the //TODO: add links */}
                 {/* <Link href='/links' passHref>
                   <ChakraLink>websites</ChakraLink>
                 </Link>{' '}
                 &{' '} */}
                 {/* <Link href='/links' passHref>
                   <ChakraLink>tools</ChakraLink>
-                </Link>{' '} */}
-                that i like. Sometimes I even write{' '}
+                </Link>{' '} */}{' '}
+                Sometimes I even write to my{' '}
                 <Link href='/blog' passHref>
-                  <ChakraLink>blogs</ChakraLink>
+                  <ChakraLink>blog</ChakraLink>
                 </Link>
                 .
               </chakra.p>

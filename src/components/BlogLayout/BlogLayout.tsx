@@ -48,7 +48,7 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
         }}
         openGraph={{
           title: frontMatter.title,
-          site_name: 'Michael Hall',
+          site_name: 'Roland Kiraly',
           description: frontMatter.summary,
           url: `https://michael-hall.me${router.asPath}`,
           type: 'article',
