@@ -88,10 +88,11 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
   );
 }
 
+const dev = process.env.NODE_ENV !== 'production';
+export const server = dev ? 'http://localhost:3000' : 'https://rolandkiralycom.vercel.app';
+
 export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_HOST || `http://${process.env.NEXT_PUBLIC_VERCEL_URL}`}/api/github`
-  );
+  const response = await fetch(`${server}/api/github`);
 
   const { stars, repos, followers } = await response.json();
 
