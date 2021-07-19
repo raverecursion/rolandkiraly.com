@@ -7,7 +7,6 @@ import RepoCard from '@/components/RepoCard';
 import PinnedProjects from '@/components/PinnedProjects';
 import { pinnedRepos, pinnedRepoType } from '@/data/pinnedRepos';
 import { repoType } from '@/pages/api/github';
-
 interface ProjectsProps {
   stars: number;
   repos: repoType[];
