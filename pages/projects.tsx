@@ -89,10 +89,10 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
 }
 
 const dev = process.env.NODE_ENV !== 'production';
-export const server = dev ? 'http://localhost:3000' : 'https://rolandkiralycom.vercel.app';
+// export const server = dev ? 'http://localhost:3000' : 'https://rolandkiralycom.vercel.app';
 
 export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
-  const response = await fetch(`${server}/api/github`);
+  const response = await fetch(`https://rolandkiralycom.vercel.app/api/github`);
 
   const { stars, repos, followers } = await response.json();
 
