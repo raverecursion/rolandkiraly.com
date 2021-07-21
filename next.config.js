@@ -56,7 +56,12 @@ module.exports = withMDX({
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   webpack5: true,
   images: {
-    domains: ['i.scdn.co', 'user-images.githubusercontent.com'],
+    domains: [
+      'i.scdn.co',
+      'user-images.githubusercontent.com',
+      'github.com',
+      'raw.githubusercontent.com',
+    ],
   },
   async headers() {
     return [

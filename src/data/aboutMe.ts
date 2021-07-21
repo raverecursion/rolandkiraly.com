@@ -9,7 +9,7 @@ const info = props => [
   },
   {
     input: 'self.currentLocation',
-    return: '"Kent, UK"',
+    return: '"London, UK"',
   },
 
   {
@@ -18,21 +18,21 @@ const info = props => [
   },
   {
     input: 'self.education',
-    return: '"B.Sc Biochemistry - University of Kent"',
+    return: '"B.Sc Computer Science - University of Birkbeck"',
   },
   {
     input: 'self.skills',
-    return: '[ "JavaScript", "Python", "React", "Next.JS", "Chakra-UI", "Tailwind", "SASS", "git"]',
+    return:
+      '[ "JavaScript","TypeScript", "Python", "React", "Next.JS", "Chakra-UI", "Tailwind", "SASS", "git"]',
   },
   {
     input: 'self.contactMe()',
-    return: `["<a style="${style(
+    return: `
+    ["<a style="${style(
       props
-    )}" rel="noopener" href="https://www.linkedin.com/in/michael-hall-86616b17b/">LinkedIn</a>", "<a style="${style(
+    )}" rel="noopener" href="https://www.linkedin.com/in/kiralyroland/">LinkedIn</a>", "<a style="${style(
       props
-    )}" rel="noopener" href="https://github.com/mah51">Github</a>", "<a rel="noopener" style="${style(
-      props
-    )}" href="https://www.instagram.com/accounts/login/">Instagram</a>"]`,
+    )}" rel="noopener" href="https://github.com/innellea">Github</a>"`,
   },
 ];
 

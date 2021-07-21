@@ -1,28 +1,22 @@
 export const pinnedRepos: pinnedRepoType[] = [
   {
-    image:
-      'https://user-images.githubusercontent.com/47287285/119244610-38467080-bb6a-11eb-8c0e-2e241a31dac8.png',
+    image: '/static/images/screenshots/screenshot-lmt.png',
     name: 'Lords Mobile Tools',
     stack: ['React', 'Bootstrap', 'Semantic-UI'],
     id: 'lordsMobileTools',
+    deployedLink: 'https://lords-mobile-tools.herokuapp.com/',
     longDescription:
-      'A quick tool I whipped up to help count worm tracks in grids on pictures of agar plates. Pretty weird, and super scuffed, but it worked well for the short time it was used.',
-  },
-  {
-    id: `mikebot`,
-    name: `MikeBot`,
-    stack: ['Discord.JS', 'Node'],
-    longDescription: `I wanted to learn how to use JavaScript and this project helped me dive into it. MikeBot utilised the discord API via discord.js to perform a variety of tasks from moderation, games, and general fun. I spent ages over quarantine on this project, and is where I started learning JS.`,
+      'A quick tool I whipped up to help Lords Mobile players choose the best in-game items.',
   },
 
   {
-    id: `michael-hall.me`,
-    stack: ['Next.JS', 'Chakra-UI', 'MDX'],
+    id: `rolandkiraly.com`,
+    stack: ['Next.JS', 'TypeScript', 'Chakra-UI', 'MDX'],
     name: `My Website`,
-    deployedLink: 'https://michael-hall.me',
+    deployedLink: 'rolandkiraly.com',
     image:
       'https://user-images.githubusercontent.com/47287285/126173254-b30cafad-d757-4f5e-9a4e-f2c89b3657b2.png',
-    longDescription: `I was looking through Lee Rob's and Daniel Wirtz's websites one afternoon, and decided I need one for myself (you might see a few similarities 🙃 ). I learnt a lot about NextJS and Chakra, and had a great time making it.`,
+    longDescription: `Inspired by Lee Rob's website.`,
   },
   {
     id: `scuffedmdb`,

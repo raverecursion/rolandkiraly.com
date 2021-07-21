@@ -13,8 +13,19 @@ export interface repoType {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
-  const userResponse = await fetch(`https://api.github.com/users/innellea`);
-  const userReposResponse = await fetch(`https://api.github.com/users/innellea/repos?per_page=10`);
+  const myHeaders = new Headers();
+  myHeaders.append('Authorization', `Basic ${process.env.GITHUB_ACCESS_TOKEN}`);
+
+  const requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+  };
+
+  const userResponse = await fetch(`https://api.github.com/users/innellea`, requestOptions);
+  const userReposResponse = await fetch(
+    `https://api.github.com/users/innellea/repos?per_page=10`,
+    requestOptions
+  );
 
   const user = await userResponse.json();
   const repositories = await userReposResponse.json();
@@ -24,8 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const stars =
     notForked.reduce((a: number, r: { stargazers_count: number }) => a + r.stargazers_count, 0) ||
     null;
-
-  res.setHeader(`Cache-Control`, `public, s-maxage=1200, stale-while-revalidate=600`);
 
   const sendRepos = notForked.map(
     ({
