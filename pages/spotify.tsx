@@ -126,7 +126,7 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
 const dev = process.env.NODE_ENV === 'development';
 export const server = dev ? 'http://localhost:3000' : `https://${process.env.VERCEL_URL}`;
 
-export async function getStaticProps(): Promise<{ props: SpotifyProps }> {
+export async function getServerSideProps(): Promise<{ props: SpotifyProps }> {
   const response = await fetch(`${server}/api/get-spotify-data`);
   let error = null;
   if (response.status !== 200) {
