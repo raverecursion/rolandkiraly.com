@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { Box, Button, Flex, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
@@ -88,12 +89,21 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
   );
 }
 
-// const dev = process.env.NODE_ENV !== 'production';
-// export const server = dev ? 'http://localhost:3000' : 'https://rolandkiralycom.vercel.app';
+// const getURL = (): string => {
+//   const url =
+//     process?.env?.URL && process.env.URL !== ''
+//       ? process.env.URL
+//       : process?.env?.VERCEL_URL && process.env.VERCEL_URL !== ''
+//       ? process.env.VERCEL_URL
+//       : 'http://localhost:3000';
+//   return url.includes('http') ? url : `https://${url}`;
+// };
 
-export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
-  const response = await fetch(`https://rolandkiralycom.vercel.app/api/github`);
+// const dev = process.env.NODE_ENV === 'development';
+// export const server = dev ? 'http://localhost:3000' : `https://${process.env.VERCEL_URL}`;
 
+export async function getServerSideProps(): Promise<{ props: ProjectsProps }> {
+  const response = await fetch(`https://${process.env.VERCEL_URL}`);
   const { stars, repos, followers } = await response.json();
 
   return { props: { stars, repos, followers, revalidate: 600 } };
