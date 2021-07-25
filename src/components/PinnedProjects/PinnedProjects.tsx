@@ -21,7 +21,7 @@ const PinnedProjects = ({ repo, projectData, left }: PinnedProjectsProps): JSX.E
   }
 
   return (
-    <Box h='full' w='full' my={5}>
+    <Box h='full' w='full' my={12}>
       <VStack
         bg={colorMode === 'light' ? `white` : `gray.900`}
         px={{ base: 4, md: 8 }}
