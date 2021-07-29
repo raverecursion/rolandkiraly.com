@@ -18,6 +18,7 @@ const tagDict = {
   'Discord.JS': FaDiscord,
   'Semantic-UI': SemanticIcon,
   Bootstrap: BootstrapIcon,
+  Postman: SiPostman,
 };
 
 interface TagsProps {
