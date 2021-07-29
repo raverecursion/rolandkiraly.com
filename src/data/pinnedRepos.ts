@@ -24,7 +24,6 @@ export const pinnedRepos: pinnedRepoType[] = [
     name: `Cloudy Mood`,
     deployedLink: 'https://innellea.github.io/Cloudy-Mood/',
     image: '/static/images/screenshots/screenshot-cloudy-mood.png',
-
     longDescription: `This is a "simple" cloud simulation app inspired by rainymood. Built with Three.JS`,
   },
   {

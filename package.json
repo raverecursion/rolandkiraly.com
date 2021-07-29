@@ -3,7 +3,7 @@
   "description": "A website to show off some of my projects",
   "version": "1.0.0",
   "private": true,
-  "author": "https://www.github.com/mah51",
+  "author": "https://www.github.com/innellea",
   "license": "MIT",
   "keywords": [
     "nextjs",
@@ -17,7 +17,7 @@
     "start": "next start",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx|html|css|scss)\" --write",
     "postinstall": "husky install"
   },
   "dependencies": {
