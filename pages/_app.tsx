@@ -11,6 +11,7 @@ import AppLayout from '@/components/AppLayout';
 import theme from '../src/theme';
 import MDXComponents from '@/components/MDXComponents';
 import { MDXProvider } from '@mdx-js/react';
+import favico from '../static/favicon.ico';
 
 const queryClient = new QueryClient();
 export default function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
@@ -38,13 +39,19 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
       <DefaultSeo
         defaultTitle='Roland Kiraly'
         titleTemplate='%s | Roland Kiraly'
+        additionalLinkTags={[
+          {
+            rel: 'icon',
+            href: '/static/favicon.ico',
+          },
+        ]}
         openGraph={{
           title: `Roland Kiraly`,
           type: `website`,
           site_name: `Roland Kiraly`,
           images: [
             {
-              url: `localhost:3000/static/images/profile.jpg`,
+              url: `localhost:3000/static/images/favicon.ico`,
               alt: `Profile Picture`,
             },
           ],
