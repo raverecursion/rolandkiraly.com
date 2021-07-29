@@ -6,7 +6,7 @@ import { FaDiscord, FaReact } from 'react-icons/fa';
 import { IoLogoNodejs } from 'react-icons/io';
 import { SiMarkdown } from 'react-icons/si';
 import { NextJSIcon, SemanticIcon, BootstrapIcon, TypeScriptIcon, TailwindCSSIcon } from '../Icons';
-
+import { SiPostman } from 'react-icons/si';
 const tagDict = {
   React: FaReact,
   'Next.JS': NextJSIcon,
@@ -18,6 +18,7 @@ const tagDict = {
   'Discord.JS': FaDiscord,
   'Semantic-UI': SemanticIcon,
   Bootstrap: BootstrapIcon,
+  Postman: SiPostman,
 };
 
 interface TagsProps {

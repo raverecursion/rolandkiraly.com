@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   Flex,
   HStack,
@@ -10,12 +10,12 @@ import {
   Tabs,
   Text,
   useColorModeValue,
-} from '@chakra-ui/react'
-import LineHeading from '@/components/LineHeading'
-import ToolGrid from '@/components/ToolGrid'
-import { AiFillApple, AiFillChrome, AiFillWindows, AiOutlineDesktop } from 'react-icons/ai'
-import { BsPhone } from 'react-icons/bs'
-import { NextSeo } from 'next-seo'
+} from '@chakra-ui/react';
+import LineHeading from '@/components/LineHeading';
+import ToolGrid from '@/components/ToolGrid';
+import { AiFillApi, AiFillWindows, AiOutlineDesktop } from 'react-icons/ai';
+import { SiAdobexd } from 'react-icons/si';
+import { NextSeo } from 'next-seo';
 
 function Tools(): React.ReactElement {
   return (
@@ -32,21 +32,6 @@ function Tools(): React.ReactElement {
         <Text mt={3}>Some tools that I find useful :).</Text>
         <Tabs variant='soft-rounded' colorScheme='blue' align='center' w='100%' mt='10' mb='24'>
           <TabList display='flex' flexWrap='wrap'>
-            <Tab
-              bg={useColorModeValue(`white.100`, `gray.800`)}
-              color={useColorModeValue(`gray.600`, `gray.500`)}
-              _selected={{
-                color: `red.800`,
-                bg: `red.100`,
-              }}
-              mr={2}
-              mt={2}
-            >
-              <HStack spacing={1}>
-                <Icon as={AiFillApple} />
-                <Text>Mac</Text>
-              </HStack>
-            </Tab>
             <Tab
               bg={useColorModeValue(`white`, `gray.800`)}
               color={useColorModeValue(`gray.600`, `gray.500`)}
@@ -74,8 +59,8 @@ function Tools(): React.ReactElement {
               s
             >
               <HStack spacing={1}>
-                <Icon as={AiFillChrome} />
-                <Text>Chrome</Text>
+                <Icon as={SiAdobexd} />
+                <Text>Design</Text>
               </HStack>
             </Tab>
             <Tab
@@ -104,33 +89,30 @@ function Tools(): React.ReactElement {
               mt={2}
             >
               <HStack spacing={1}>
-                <Icon as={BsPhone} />
-                <Text>IOS</Text>
+                <Icon as={AiFillApi} />
+                <Text>API</Text>
               </HStack>
             </Tab>
           </TabList>
 
           <TabPanels>
             <TabPanel>
-              <ToolGrid filter='mac' />
-            </TabPanel>
-            <TabPanel>
               <ToolGrid filter='windows' />
             </TabPanel>
             <TabPanel>
-              <ToolGrid filter='chrome' />
+              <ToolGrid filter='design' />
             </TabPanel>
             <TabPanel>
               <ToolGrid filter='web' />
             </TabPanel>
             <TabPanel>
-              <ToolGrid filter='ios' />
+              <ToolGrid filter='api' />
             </TabPanel>
           </TabPanels>
         </Tabs>
       </Flex>
     </>
-  )
+  );
 }
 
-export default Tools
+export default Tools;

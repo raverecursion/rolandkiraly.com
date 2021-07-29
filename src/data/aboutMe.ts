@@ -14,7 +14,7 @@ const info = props => [
 
   {
     input: 'self.interests',
-    return: '["web dev", "biology", "tennis"]',
+    return: '["web dev", "biology", "neuoroscience"]',
   },
   {
     input: 'self.education',
@@ -23,7 +23,7 @@ const info = props => [
   {
     input: 'self.skills',
     return:
-      '[ "JavaScript","TypeScript", "Python", "React", "Next.JS", "Chakra-UI", "Tailwind", "SASS", "git"]',
+      '[ "JavaScript","TypeScript", "Python", "React", "Next.JS", "Chakra-UI", ,"Styled-Components","Tailwind", "SASS", "git"]',
   },
   {
     input: 'self.contactMe()',

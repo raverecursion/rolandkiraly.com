@@ -49,7 +49,7 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
             },
           ],
         }}
-        description='The purpose of this site is for me to test things out & maybe show some things off.'
+        description='Personal website and portfolio of Roland Kiraly'
       />
       <ChakraProvider theme={theme}>
         <PlausibleProvider

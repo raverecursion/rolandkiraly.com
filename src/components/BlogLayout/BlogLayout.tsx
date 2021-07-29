@@ -5,7 +5,7 @@ import {
   chakra,
   Box,
   Flex,
-  Link as ChakraLink,
+  // Link as ChakraLink,
   Text,
   useColorModeValue,
   HStack,
@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { format, parseISO } from 'date-fns';
 import ViewCounter from '../ViewCounter';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { EditIcon } from '@chakra-ui/icons';
 import { frontMatterType } from '@/utils/mdx';
 import BlogBadge from '../BlogBadge';
@@ -135,18 +135,6 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
           {children}
           <HStack justifyContent='flex-start' mr='auto' mt={5}>
             <EditIcon />
-            <Link
-              href={`https://github.com/mah51/personal-web/edit/main/data/blog/${frontMatter.slug}.mdx`}
-              passHref
-            >
-              <ChakraLink
-                color={useColorModeValue('gray.900', 'white')}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Edit on github
-              </ChakraLink>
-            </Link>
           </HStack>
         </Box>
       </chakra.article>
