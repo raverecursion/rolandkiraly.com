@@ -13,13 +13,7 @@ import {
 } from '@chakra-ui/react';
 import LineHeading from '@/components/LineHeading';
 import ToolGrid from '@/components/ToolGrid';
-import {
-  AiFillApple,
-  AiFillApi,
-  AiFillChrome,
-  AiFillWindows,
-  AiOutlineDesktop,
-} from 'react-icons/ai';
+import { AiFillApi, AiFillWindows, AiOutlineDesktop } from 'react-icons/ai';
 import { SiAdobexd } from 'react-icons/si';
 import { NextSeo } from 'next-seo';
 
