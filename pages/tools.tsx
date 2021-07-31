@@ -29,7 +29,7 @@ function Tools(): React.ReactElement {
         >
           Tools
         </LineHeading>
-        <Text mt={3}>Some tools that I find useful :).</Text>
+        <Text mt={3}>Tools that I find useful</Text>
         <Tabs variant='soft-rounded' colorScheme='blue' align='center' w='100%' mt='10' mb='24'>
           <TabList display='flex' flexWrap='wrap'>
             <Tab
@@ -60,7 +60,7 @@ function Tools(): React.ReactElement {
             >
               <HStack spacing={1}>
                 <Icon as={SiAdobexd} />
-                <Text>Design</Text>
+                <Text>UI/UX</Text>
               </HStack>
             </Tab>
             <Tab
@@ -100,7 +100,7 @@ function Tools(): React.ReactElement {
               <ToolGrid filter='windows' />
             </TabPanel>
             <TabPanel>
-              <ToolGrid filter='design' />
+              <ToolGrid filter='ui/ux' />
             </TabPanel>
             <TabPanel>
               <ToolGrid filter='web' />

@@ -87,20 +87,7 @@ export default function Home(): React.ReactElement {
                 <Link href='/projects' passHref>
                   <ChakraLink>projects</ChakraLink>
                 </Link>{' '}
-                , and test things out.
-                {/* You can see what music I am listening to on the{' '}
-                <Link href='/music' passHref>
-                  <ChakraLink>music page</ChakraLink>
-                </Link>{' '}
-                or the //TODO: add links */}
-                {/* <Link href='/links' passHref>
-                  <ChakraLink>websites</ChakraLink>
-                </Link>{' '}
-                &{' '} */}
-                {/* <Link href='/links' passHref>
-                  <ChakraLink>tools</ChakraLink>
-                </Link>{' '} */}{' '}
-                Sometimes I even write to my{' '}
+                , and test things out. Sometimes I even write to my{' '}
                 <Link href='/blog' passHref>
                   <ChakraLink>blog</ChakraLink>
                 </Link>
