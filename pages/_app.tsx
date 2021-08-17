@@ -41,6 +41,7 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
         additionalLinkTags={[
           {
             rel: 'icon',
+            href: '/static/favicon.ico',
           },
         ]}
         openGraph={{
