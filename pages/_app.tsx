@@ -11,7 +11,6 @@ import AppLayout from '@/components/AppLayout';
 import theme from '../src/theme';
 import MDXComponents from '@/components/MDXComponents';
 import { MDXProvider } from '@mdx-js/react';
-import favico from '../static/favicon.ico';
 
 const queryClient = new QueryClient();
 export default function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
@@ -42,7 +41,6 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
         additionalLinkTags={[
           {
             rel: 'icon',
-            href: '/static/favicon.ico',
           },
         ]}
         openGraph={{
