@@ -17,7 +17,7 @@ specifiers:
   '@types/react': 17.0.11
   '@types/react-dom': 17.0.7
   '@typescript-eslint/eslint-plugin': 4.29.2
-  '@typescript-eslint/parser': 4.27.0
+  '@typescript-eslint/parser': 4.29.2
   axios: 0.21.1
   cross-env: 7.0.3
   cz-conventional-changelog: 3.3.0
@@ -98,8 +98,8 @@ devDependencies:
   '@types/node': 15.12.2
   '@types/react': 17.0.11
   '@types/react-dom': 17.0.7
-  '@typescript-eslint/eslint-plugin': 4.29.2_1c5b48a1f115d929d137a72df737d54c
-  '@typescript-eslint/parser': 4.27.0_eslint@7.28.0+typescript@4.3.2
+  '@typescript-eslint/eslint-plugin': 4.29.2_a24fc0317b16f35a8732fa8d7deb707b
+  '@typescript-eslint/parser': 4.29.2_eslint@7.28.0+typescript@4.3.2
   cz-conventional-changelog: 3.3.0
   eslint: 7.28.0
   eslint-config: 0.3.0
@@ -3124,7 +3124,7 @@ packages:
     resolution: {integrity: sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI=}
     dev: false
 
-  /@typescript-eslint/eslint-plugin/4.29.2_1c5b48a1f115d929d137a72df737d54c:
+  /@typescript-eslint/eslint-plugin/4.29.2_a24fc0317b16f35a8732fa8d7deb707b:
     resolution: {integrity: sha512-x4EMgn4BTfVd9+Z+r+6rmWxoAzBaapt4QFqE+d8L8sUtYZYLDTK6VG/y/SMMWA5t1/BVU5Kf+20rX4PtWzUYZg==}
     engines: {node: ^10.12.0 || >=12.0.0}
     peerDependencies:
@@ -3136,7 +3136,7 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/experimental-utils': 4.29.2_eslint@7.28.0+typescript@4.3.2
-      '@typescript-eslint/parser': 4.27.0_eslint@7.28.0+typescript@4.3.2
+      '@typescript-eslint/parser': 4.29.2_eslint@7.28.0+typescript@4.3.2
       '@typescript-eslint/scope-manager': 4.29.2
       debug: 4.3.2
       eslint: 7.28.0
@@ -3180,6 +3180,26 @@ packages:
       '@typescript-eslint/scope-manager': 4.27.0
       '@typescript-eslint/types': 4.27.0
       '@typescript-eslint/typescript-estree': 4.27.0_typescript@4.3.2
+      debug: 4.3.2
+      eslint: 7.28.0
+      typescript: 4.3.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@typescript-eslint/parser/4.29.2_eslint@7.28.0+typescript@4.3.2:
+    resolution: {integrity: sha512-WQ6BPf+lNuwteUuyk1jD/aHKqMQ9jrdCn7Gxt9vvBnzbpj7aWEf+aZsJ1zvTjx5zFxGCt000lsbD9tQPEL8u6g==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    peerDependencies:
+      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/scope-manager': 4.29.2
+      '@typescript-eslint/types': 4.29.2
+      '@typescript-eslint/typescript-estree': 4.29.2_typescript@4.3.2
       debug: 4.3.2
       eslint: 7.28.0
       typescript: 4.3.2
