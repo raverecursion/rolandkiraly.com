@@ -34,7 +34,7 @@ specifiers:
   firebase-admin: 9.9.0
   framer-motion: ^4.1.8
   gray-matter: 4.0.3
-  husky: 6.0.0
+  husky: 7.0.1
   mdx-prism: 0.3.3
   next: 11.0.0
   next-mdx-remote: 3.0.2
@@ -110,7 +110,7 @@ devDependencies:
   eslint-plugin-prettier: 3.3.1_eslint@7.28.0+prettier@2.3.1
   eslint-plugin-react: 7.23.2_eslint@7.28.0
   eslint-plugin-react-hooks: 4.2.0_eslint@7.28.0
-  husky: 6.0.0
+  husky: 7.0.1
   next: 11.0.0_c8cdd86752aa86fb2b6e32ae91115ebe
   prettier: 2.3.1
   rehype: 11.0.0
@@ -5985,8 +5985,9 @@ packages:
     dev: false
     optional: true
 
-  /husky/6.0.0:
-    resolution: {integrity: sha512-SQS2gDTB7tBN486QSoKPKQItZw97BMOd+Kdb6ghfpBc0yXyzrddI0oDV5MkDAbuB4X2mO3/nj60TRMcYxwzZeQ==}
+  /husky/7.0.1:
+    resolution: {integrity: sha512-gceRaITVZ+cJH9sNHqx5tFwbzlLCVxtVZcusME8JYQ8Edy5mpGDOqD8QBCdMhpyo9a+JXddnujQ4rpY2Ff9SJA==}
+    engines: {node: '>=12'}
     hasBin: true
     dev: true
 
