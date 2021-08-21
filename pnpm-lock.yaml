@@ -12,7 +12,7 @@ specifiers:
   '@emotion/styled': ^11.3.0
   '@mapbox/rehype-prism': 0.6.0
   '@mdx-js/loader': 1.6.22
-  '@next/mdx': 11.0.0
+  '@next/mdx': 11.1.0
   '@types/node': 15.12.2
   '@types/react': 17.0.11
   '@types/react-dom': 17.0.7
@@ -64,7 +64,7 @@ dependencies:
   '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
   '@mapbox/rehype-prism': 0.6.0
   '@mdx-js/loader': 1.6.22_react@17.0.2
-  '@next/mdx': 11.0.0_@mdx-js+loader@1.6.22
+  '@next/mdx': 11.1.0_@mdx-js+loader@1.6.22
   axios: 0.21.1
   cross-env: 7.0.3
   date-fns: 2.21.1
@@ -2803,8 +2803,8 @@ packages:
     resolution: {integrity: sha512-UzdX3y6XSrj9YuASUb/p4sRvfjP2klj2YgIOfMwrWoLTTPJQMh00hREB9Ftr7m7RIxjVSAaaLXIRLdxvq948GA==}
     dev: true
 
-  /@next/mdx/11.0.0_@mdx-js+loader@1.6.22:
-    resolution: {integrity: sha512-Ll/u6kFM1y8a2lKvDee10cuCCecOE98QqGLJgsKqz5Y8e1lHlK5hZsGME/ALG/vDuttObdFnNbkg6FsfElXMvw==}
+  /@next/mdx/11.1.0_@mdx-js+loader@1.6.22:
+    resolution: {integrity: sha512-X+NwSByGr9HuPkGs1nrzhmJ5qqQbv6CpEA3dJKEYHaDe7YzEUCM00Y7abxOzowXhUXeDdAHJ7IeIV4GZMhdcpg==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '*'
