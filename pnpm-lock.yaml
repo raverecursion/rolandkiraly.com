@@ -45,7 +45,7 @@ specifiers:
   react-awesome-reveal: 3.7.1
   react-dom: 17.0.2
   react-ga: 3.3.0
-  react-hotkeys-hook: 3.3.2
+  react-hotkeys-hook: 3.4.0
   react-icons: 4.2.0
   react-palette: 1.0.2
   react-query: 3.13.10
@@ -79,7 +79,7 @@ dependencies:
   react-awesome-reveal: 3.7.1_81862478866c67faf6c62f3dd0cd029f
   react-dom: 17.0.2_react@17.0.2
   react-ga: 3.3.0_react@17.0.2
-  react-hotkeys-hook: 3.3.2_react-dom@17.0.2+react@17.0.2
+  react-hotkeys-hook: 3.4.0_react-dom@17.0.2+react@17.0.2
   react-icons: 4.2.0_react@17.0.2
   react-palette: 1.0.2_react-dom@17.0.2+react@17.0.2
   react-query: 3.13.10_react-dom@17.0.2+react@17.0.2
@@ -8018,8 +8018,8 @@ packages:
       react: 17.0.2
     dev: false
 
-  /react-hotkeys-hook/3.3.2_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-sR98wtrz3qyVZ5G3I5TTRy7Odm1I9poGt1VwT4RN1ztnobRV/pNGja+6B+LONv+IBIyHLvidzW8IZRB7AuAUkw==}
+  /react-hotkeys-hook/3.4.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-TFtMNb9ALuL3uvtqGpaehwCeua3uYCrG3dKUqd+hEI2UgbVU94ifA1AEeemXSF6K81llPDX1RZvp7teUEQzAPA==}
     peerDependencies:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
