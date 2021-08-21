@@ -13,7 +13,7 @@ specifiers:
   '@mapbox/rehype-prism': 0.6.0
   '@mdx-js/loader': 1.6.22
   '@next/mdx': 11.0.0
-  '@types/node': 15.12.2
+  '@types/node': 16.7.1
   '@types/react': 17.0.11
   '@types/react-dom': 17.0.7
   '@typescript-eslint/eslint-plugin': 4.29.2
@@ -95,7 +95,7 @@ devDependencies:
   '@babel/preset-react': 7.14.5_@babel+core@7.14.6
   '@commitlint/cli': 12.1.4
   '@commitlint/config-conventional': 12.1.4
-  '@types/node': 15.12.2
+  '@types/node': 16.7.1
   '@types/react': 17.0.11
   '@types/react-dom': 17.0.7
   '@typescript-eslint/eslint-plugin': 4.29.2_a24fc0317b16f35a8732fa8d7deb707b
@@ -3068,6 +3068,10 @@ packages:
 
   /@types/node/15.12.2:
     resolution: {integrity: sha512-zjQ69G564OCIWIOHSXyQEEDpdpGl+G348RAKY0XXy9Z5kU9Vzv1GMNnkar/ZJ8dzXB3COzD9Mo9NtRZ4xfgUww==}
+
+  /@types/node/16.7.1:
+    resolution: {integrity: sha512-ncRdc45SoYJ2H4eWU9ReDfp3vtFqDYhjOsKlFFUDEn8V1Bgr2RjYal8YT5byfadWIRluhPFU6JiDOl0H6Sl87A==}
+    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
