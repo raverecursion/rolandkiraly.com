@@ -1,6 +1,21 @@
 {
+  "extends": ["config:base"],
+  "commitBodyTable": true,
+  "schedule": ["every saturday before 7am"],
+  "requiredStatusChecks": null,
   "packageRules": [
     {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "devDependencies (non-major)",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["aws-sdk"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
