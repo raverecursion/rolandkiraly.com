@@ -10,7 +10,7 @@ specifiers:
   '@commitlint/config-conventional': 12.1.4
   '@emotion/react': 11.4.1
   '@emotion/styled': 11.3.0
-  '@mapbox/rehype-prism': 0.6.0
+  '@mapbox/rehype-prism': 0.7.0
   '@mdx-js/loader': 1.6.22
   '@next/mdx': 11.0.0
   '@types/node': 15.12.2
@@ -62,7 +62,7 @@ dependencies:
   '@chakra-ui/react': 1.6.6_8d167c97cec7349161163108e2f2e3ad
   '@emotion/react': 11.4.1_56f22c50b68024c6e259393098372ce5
   '@emotion/styled': 11.3.0_35b1fcf8648d3bb8c6845494ee391502
-  '@mapbox/rehype-prism': 0.6.0
+  '@mapbox/rehype-prism': 0.7.0
   '@mdx-js/loader': 1.6.22_react@17.0.2
   '@next/mdx': 11.0.0_@mdx-js+loader@1.6.22
   axios: 0.21.1
@@ -2851,8 +2851,8 @@ packages:
       regenerator-runtime: 0.13.9
     dev: false
 
-  /@mapbox/rehype-prism/0.6.0:
-    resolution: {integrity: sha512-/0Ev/PB4fXdKPT6VDzVpnAPxGpWFIc4Yz3mf/DzLEMxlpIPZpZlCzaFk4V4NGFofQXPc41+GpEcZtWP3VuFWVA==}
+  /@mapbox/rehype-prism/0.7.0:
+    resolution: {integrity: sha512-zSG46selA6v+3THhCatTyOt9DuTzxTIVTxTbcj15kFmxPDtjzZ5VoFVCLZfjWFouYa9PiXxcbMLLhJoVzCxh9w==}
     engines: {node: '>=10'}
     dependencies:
       hast-util-to-string: 1.0.4
