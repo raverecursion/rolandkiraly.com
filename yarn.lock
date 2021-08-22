@@ -4686,7 +4686,7 @@ foreach@^2.0.5:
   resolved "https://registry.npmjs.org/foreach/-/foreach-2.0.5.tgz"
   integrity sha1-C+4AUBiusmDQo6865ljdATbsG5k=
 
-framer-motion@^4.1.8:
+framer-motion@4.1.17:
   version "4.1.17"
   resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-4.1.17.tgz"
   integrity sha512-thx1wvKzblzbs0XaK2X0G1JuwIdARcoNOW7VVwjO8BUltzXPyONGAElLu6CiCScsOQRI7FIk/45YTFtJw5Yozw==
