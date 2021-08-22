@@ -21,7 +21,7 @@ specifiers:
   axios: 0.21.1
   cross-env: 7.0.3
   cz-conventional-changelog: 3.3.0
-  date-fns: 2.21.1
+  date-fns: 2.23.0
   eslint: 7.32.0
   eslint-config: 0.3.0
   eslint-config-next: 11.1.0
@@ -67,7 +67,7 @@ dependencies:
   '@next/mdx': 11.0.0_@mdx-js+loader@1.6.22
   axios: 0.21.1
   cross-env: 7.0.3
-  date-fns: 2.21.1
+  date-fns: 2.23.0
   firebase-admin: 9.9.0
   framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
   gray-matter: 4.0.3
@@ -4504,8 +4504,8 @@ packages:
     dev: false
     optional: true
 
-  /date-fns/2.21.1:
-    resolution: {integrity: sha512-m1WR0xGiC6j6jNFAyW4Nvh4WxAi4JF4w9jRJwSI8nBmNcyZXPcP9VUQG+6gHQXAmqaGEKDKhOqAtENDC941UkA==}
+  /date-fns/2.23.0:
+    resolution: {integrity: sha512-5ycpauovVyAk0kXNZz6ZoB9AYMZB4DObse7P3BPWmyEjXNORTI8EJ6X0uaSAq4sCHzM1uajzrkr6HnsLQpxGXA==}
     engines: {node: '>=0.11'}
     dev: false
 
