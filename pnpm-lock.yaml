@@ -38,7 +38,7 @@ specifiers:
   mdx-prism: 0.3.4
   next: 11.1.0
   next-mdx-remote: 3.0.4
-  next-plausible: 1.6.1
+  next-plausible: 1.9.0
   next-seo: 4.24.0
   prettier: 2.3.2
   react: 17.0.2
@@ -73,7 +73,7 @@ dependencies:
   gray-matter: 4.0.3
   mdx-prism: 0.3.4
   next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
-  next-plausible: 1.6.1_7df30a00c1bfce1004e3004b7e801a78
+  next-plausible: 1.9.0_7df30a00c1bfce1004e3004b7e801a78
   next-seo: 4.24.0_7df30a00c1bfce1004e3004b7e801a78
   react: 17.0.2
   react-awesome-reveal: 3.7.1_56f22c50b68024c6e259393098372ce5
@@ -7254,10 +7254,10 @@ packages:
       - supports-color
     dev: false
 
-  /next-plausible/1.6.1_7df30a00c1bfce1004e3004b7e801a78:
-    resolution: {integrity: sha512-eMVqZbzU6bJsBIHlC63lNKl0KLvx8NA+/YlUUqj2gvCviQ7C2X4PY59gEB+mO46JvKSy/IhAD8l85/YGFhCkDg==}
+  /next-plausible/1.9.0_7df30a00c1bfce1004e3004b7e801a78:
+    resolution: {integrity: sha512-7YaK/Rb1wNa7lne105LF+WbMG9VTsyf3iCXXuzzMQ930mUIMLXRcf5ZCaqtj6bjq9JbczdHe46wdW0frPfzkrA==}
     peerDependencies:
-      next: ^9.4.0 || ^10.0.0
+      next: ^9.4.0 || ^10.0.0 || ^11.0.0
       react: ^16.8.0 || ^17.0.0
       react-dom: ^16.8.0 || ^17.0.0
     dependencies:
