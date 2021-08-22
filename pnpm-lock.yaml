@@ -31,7 +31,7 @@ specifiers:
   eslint-plugin-prettier: 3.4.1
   eslint-plugin-react: 7.24.0
   eslint-plugin-react-hooks: 4.2.0
-  firebase-admin: 9.9.0
+  firebase-admin: 9.11.1
   framer-motion: 4.1.17
   gray-matter: 4.0.3
   husky: 7.0.1
@@ -68,7 +68,7 @@ dependencies:
   axios: 0.21.1
   cross-env: 7.0.3
   date-fns: 2.21.1
-  firebase-admin: 9.9.0
+  firebase-admin: 9.11.1
   framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
   gray-matter: 4.0.3
   mdx-prism: 0.3.4
@@ -5432,8 +5432,8 @@ packages:
       resolve-dir: 1.0.1
     dev: true
 
-  /firebase-admin/9.9.0:
-    resolution: {integrity: sha512-04HT7JAAqcJYty95qf15IBD9CXf+vr7S8zNU6Zt1ayC1J05DLaCsUd19/sCNAjZ614KHexAYUtyLgZoJwu2wOQ==}
+  /firebase-admin/9.11.1:
+    resolution: {integrity: sha512-Y9fjelljy6MKqwsSbM/UN1k8gBQh5zfm5fCTe0Z6Gch2T3nDUIPsTcf+jfe4o40/MPYuybili9XJjTMmM2e5MQ==}
     engines: {node: '>=10.13.0'}
     dependencies:
       '@firebase/database': 0.10.8
