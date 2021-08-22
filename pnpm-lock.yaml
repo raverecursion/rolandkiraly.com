@@ -42,7 +42,7 @@ specifiers:
   next-seo: 4.24.0
   prettier: 2.3.2
   react: 17.0.2
-  react-awesome-reveal: 3.7.1
+  react-awesome-reveal: 3.8.1
   react-dom: 17.0.2
   react-ga: 3.3.0
   react-hotkeys-hook: 3.3.2
@@ -76,7 +76,7 @@ dependencies:
   next-plausible: 1.6.1_7df30a00c1bfce1004e3004b7e801a78
   next-seo: 4.24.0_7df30a00c1bfce1004e3004b7e801a78
   react: 17.0.2
-  react-awesome-reveal: 3.7.1_56f22c50b68024c6e259393098372ce5
+  react-awesome-reveal: 3.8.1_56f22c50b68024c6e259393098372ce5
   react-dom: 17.0.2_react@17.0.2
   react-ga: 3.3.0_react@17.0.2
   react-hotkeys-hook: 3.3.2_react-dom@17.0.2+react@17.0.2
@@ -2438,30 +2438,6 @@ packages:
     resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==}
     dev: false
 
-  /@emotion/react/11.4.0_56f22c50b68024c6e259393098372ce5:
-    resolution: {integrity: sha512-4XklWsl9BdtatLoJpSjusXhpKv9YVteYKh9hPKP1Sxl+mswEFoUe0WtmtWjxEjkA51DQ2QRMCNOvKcSlCQ7ivg==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@types/react': '*'
-      react: '>=16.8.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/core': 7.15.0
-      '@babel/runtime': 7.14.8
-      '@emotion/cache': 11.4.0
-      '@emotion/serialize': 1.0.2
-      '@emotion/sheet': 1.0.1
-      '@emotion/utils': 1.0.0
-      '@emotion/weak-memoize': 0.2.5
-      '@types/react': 17.0.19
-      hoist-non-react-statics: 3.3.2
-      react: 17.0.2
-    dev: false
-
   /@emotion/react/11.4.1_56f22c50b68024c6e259393098372ce5:
     resolution: {integrity: sha512-pRegcsuGYj4FCdZN6j5vqCALkNytdrKw3TZMekTzNXixRg4wkLsU5QEaBG5LC6l01Vppxlp7FE3aTHpIG5phLg==}
     peerDependencies:
@@ -2494,10 +2470,6 @@ packages:
       '@emotion/unitless': 0.7.5
       '@emotion/utils': 1.0.0
       csstype: 3.0.8
-    dev: false
-
-  /@emotion/sheet/1.0.1:
-    resolution: {integrity: sha512-GbIvVMe4U+Zc+929N1V7nW6YYJtidj31lidSmdYcWozwoBIObXBnaJkKNDjZrLm9Nc0BR+ZyHNaRZxqNZbof5g==}
     dev: false
 
   /@emotion/sheet/1.0.2:
@@ -8050,12 +8022,12 @@ packages:
       unpipe: 1.0.0
     dev: true
 
-  /react-awesome-reveal/3.7.1_56f22c50b68024c6e259393098372ce5:
-    resolution: {integrity: sha512-yFrfs38X3SW1wZqo8777Vki+ruXoscnaFG2zlcjFlogyQ6TlXzRCtrQyjqiiLhsq85t9jykv9koJmCuTf7Xu+g==}
+  /react-awesome-reveal/3.8.1_56f22c50b68024c6e259393098372ce5:
+    resolution: {integrity: sha512-cB+XubgAa7QJ9ibkHePiVGTOzRKokqdDOP+yLfQtw5uu+xsAR/kwktLntMZev+1GBz2NhlcpbYvKqEbVIkKfLw==}
     peerDependencies:
       react: '>=16.14.0'
     dependencies:
-      '@emotion/react': 11.4.0_56f22c50b68024c6e259393098372ce5
+      '@emotion/react': 11.4.1_56f22c50b68024c6e259393098372ce5
       react: 17.0.2
       react-intersection-observer: 8.32.0_react@17.0.2
       react-is: 17.0.2
