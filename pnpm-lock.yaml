@@ -39,7 +39,7 @@ specifiers:
   next: 11.1.0
   next-mdx-remote: 3.0.4
   next-plausible: 1.6.1
-  next-seo: 4.24.0
+  next-seo: 4.26.0
   prettier: 2.3.2
   react: 17.0.2
   react-awesome-reveal: 3.7.1
@@ -74,7 +74,7 @@ dependencies:
   mdx-prism: 0.3.4
   next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
   next-plausible: 1.6.1_7df30a00c1bfce1004e3004b7e801a78
-  next-seo: 4.24.0_7df30a00c1bfce1004e3004b7e801a78
+  next-seo: 4.26.0_7df30a00c1bfce1004e3004b7e801a78
   react: 17.0.2
   react-awesome-reveal: 3.7.1_56f22c50b68024c6e259393098372ce5
   react-dom: 17.0.2_react@17.0.2
@@ -7266,12 +7266,12 @@ packages:
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /next-seo/4.24.0_7df30a00c1bfce1004e3004b7e801a78:
-    resolution: {integrity: sha512-9VQXfXAelhE+hAWzJ4azigQaW3FPX0kU0eYKFQXKsQjgY7AWtukjRGXls0oSIk8khhDJwmCt46EwsO9n5DDW6Q==}
+  /next-seo/4.26.0_7df30a00c1bfce1004e3004b7e801a78:
+    resolution: {integrity: sha512-5TqywQ3XAwqdmEU1AyNZjR7WdDKFTkDD8aBtgQelPvzBUEy8i0mTjtiw+09jhiHFNik6FqS8uPKCaYcY6jRgSQ==}
     peerDependencies:
-      next: ^8.1.1-canary.54 || ^9.0.0 || ^10.0.0
-      react: ^16.0.0 || ^17.0.0
-      react-dom: ^16.0.0 || ^17.0.0
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
     dependencies:
       next: 11.1.0_d656e95d5564dbefda9f605dfed71e60
       react: 17.0.2
