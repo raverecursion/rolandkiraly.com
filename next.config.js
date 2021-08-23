@@ -48,11 +48,11 @@ const securityHeaders = [
   },
 ];
 
-const withMDX = require('@next/mdx')({
+const withMDX = require(`@next/mdx`)({
   extension: /\.mdx?$/,
 });
 
-module.exports = withMDX({
+export default withMDX({
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   webpack5: true,
   images: {
