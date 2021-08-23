@@ -11,7 +11,7 @@ export const pinnedRepos: pinnedRepoType[] = [
   },
   {
     id: 'streamable',
-    name: 'Streamable',
+    name: 'Disney-ish',
     image: '/static/images/screenshots/screenshot-streamable.png',
     stack: ['React', 'Next.JS', 'TailwindCSS'],
     deployedLink: 'https://streamable.netlify.app/home',
@@ -38,10 +38,18 @@ export const pinnedRepos: pinnedRepoType[] = [
   {
     id: `hype-train`,
     stack: ['React', 'Redux', 'Styled-Components'],
-    name: `Hype Train E-Commerce`,
+    name: `Noir E-Commerce`,
     deployedLink: 'https://noir-clothing-testing.herokuapp.com/',
     image: '/static/images/screenshots/screenshot-hype-train.png',
-    longDescription: `I built the first version of this website during the latter half of quarantine to rate movies that my friends and I had watched over discord. Then decided it needed a remodel, and created ScuffedMDB (Movie-rating V2.0), made with NextJS and ChakraUI. It has been great to make a website, that not only all my friends can use, but other people can use (and have :)) for their own movie rating sites.`,
+    longDescription: `A fully functional E-Commerce app I built during the latter half of quarantine`,
+  },
+  {
+    id: `a-bnb-ish`,
+    stack: ['React', 'Redux', 'Styled-Components'],
+    name: `Airbnb-ish`,
+    deployedLink: 'https://noir-clothing-testing.herokuapp.com/',
+    image: '/static/images/screenshots/screenshot-abnb.png',
+    longDescription: `Inspired by Airbnb's website with 2020's Olympics theme`,
   },
 ];
 
