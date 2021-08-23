@@ -5,6 +5,8 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import mdxPrism from '@mapbox/rehype-prism';
 import remarkSlug from 'remark-slug';
+import remarkAutoLinkHeadings from 'remark-autolink-headings';
+import codeTitle from 'remark-code-titles';
 export const getFiles = (type: string) =>
   fs.readdirSync(path.join(process.cwd(), `src`, `data`, type));
 
@@ -16,11 +18,7 @@ export async function getFileBySlug(type: string, slug: number) {
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [
-        remarkSlug,
-        [require('remark-autolink-headings')],
-        require('remark-code-titles'),
-      ],
+      remarkPlugins: [remarkSlug, [remarkAutoLinkHeadings], codeTitle],
       rehypePlugins: [mdxPrism],
     },
   });
