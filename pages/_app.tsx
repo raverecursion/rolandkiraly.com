@@ -41,7 +41,7 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
         additionalLinkTags={[
           {
             rel: 'icon',
-            href: '/static/favicon.ico',
+            href: './static/images/favicon.ico',
           },
         ]}
         openGraph={{
@@ -50,7 +50,7 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
           site_name: `Roland Kiraly`,
           images: [
             {
-              url: `localhost:3000/static/images/favicon.ico`,
+              url: `.http://localhost:3000/static/images/favicon.ico`,
               alt: `Profile Picture`,
             },
           ],

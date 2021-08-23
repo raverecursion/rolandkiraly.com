@@ -216,11 +216,11 @@ body,
 }
 
 .blurred-background-global {
+  -ms-filter: blur(10px) saturate(180%);
   filter: blur(10px) saturate(180%);
   -webkit-filter: blur(10px) saturate(180%);
   -moz-filter: blur(10px) saturate(180%);
   -o-filter: blur(10px) saturate(180%);
-  -ms-filter: blur(10px) saturate(180%);
 }
 
 .remark-code-title + pre {

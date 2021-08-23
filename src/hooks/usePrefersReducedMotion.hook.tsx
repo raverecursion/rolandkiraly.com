@@ -13,7 +13,7 @@ function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(getInitialState);
   React.useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY);
-    const listener = event => {
+    const listener = (event: { matches: any }) => {
       setPrefersReducedMotion(!event.matches);
     };
     mediaQueryList.addListener(listener);

@@ -1,14 +1,17 @@
 import React from 'react';
 
-export default function useIsOnscreen(elementRef, defaultState = false) {
+export default function useIsOnscreen(
+  elementRef: React.MutableRefObject<undefined>,
+  defaultState = false
+) {
   const [isOnscreen, setIsOnscreen] = React.useState(defaultState);
 
   React.useEffect(() => {
     if (!elementRef.current) {
-      return null;
+      return undefined;
     }
 
-    const observer = new window.IntersectionObserver((entries, observer) => {
+    const observer = new window.IntersectionObserver(entries => {
       const [entry] = entries;
 
       setIsOnscreen(entry.intersectionRatio > 0);

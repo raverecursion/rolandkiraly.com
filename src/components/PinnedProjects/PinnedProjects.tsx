@@ -1,6 +1,5 @@
-import React from 'react';
 import { Box, Flex, Text, useColorMode, Stack, Link as ChakraLink, VStack } from '@chakra-ui/react';
-import { repoType } from '@/pages/api/github';
+import { repoType } from '../../../pages/api/github';
 import { pinnedRepoType } from '@/data/pinnedRepos';
 import PinnedImageProjects from '../PinnedImageProjects';
 import Link from 'next/link';

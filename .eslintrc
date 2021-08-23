@@ -1,16 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "next"
-    // Uncomment the following lines to enable eslint-config-prettier
-    // Is not enabled right now to avoid issues with the Next.js repo
-    //"prettier"
-  ],
+  "plugins": ["@typescript-eslint"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "next", "prettier"],
   "env": {
     "es6": true,
     "browser": true,
@@ -42,18 +33,13 @@
     "no-console": [
       2,
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ]
   },
   "overrides": [
     {
-      "files": [
-        "*.test.js*"
-      ],
+      "files": ["*.test.js*"],
       "env": {
         "jest": true
       },

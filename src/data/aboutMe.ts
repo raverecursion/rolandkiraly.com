@@ -1,8 +1,10 @@
-const style = props =>
+import { ColorMode } from '@chakra-ui/react';
+
+const style = (props: { colorMode: string }) =>
   `color: var(--chakra-colors-brand-${
     props.colorMode === 'light' ? '600' : '300'
   });font-weight: 500;`;
-const info = props => [
+const info = (props: { colorMode: ColorMode }) => [
   {
     input: 'self.learnAboutMe()',
     return: 'Loaded data...',

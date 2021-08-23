@@ -1,4 +1,4 @@
-const range = (start, end, step = 1) => {
+const range = (start: number, end: number, step = 1) => {
   const output = [];
   if (typeof end === 'undefined') {
     end = start;
@@ -10,11 +10,11 @@ const range = (start, end, step = 1) => {
   return output;
 };
 
-export const getTotalCharCode = phrase => {
-  return phrase.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+export const getTotalCharCode = (phrase: string) => {
+  return phrase.split('').reduce((a: any, c: string) => a + c.charCodeAt(0), 0);
 };
 
-const sampleOne = arr => {
+const sampleOne = (arr: string | any[]) => {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
@@ -25,11 +25,11 @@ const generateId = (len = 4) => {
   return sample(characters, len).join('');
 };
 
-const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 
-const clamp = (val, min = 0, max = 1) => Math.max(min, Math.min(max, val));
+const clamp = (val: number, min = 0, max = 1) => Math.max(min, Math.min(max, val));
 
-const sample = (arr, len = 1) => {
+const sample = (arr: string[] | number[] | string[][], len = 1) => {
   const output = [];
 
   for (let i = 0; i < len; i++) {

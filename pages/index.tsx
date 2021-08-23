@@ -2,13 +2,17 @@ import {
   Box,
   Flex,
   Heading,
-  Image,
+  // Image,
   chakra,
   useColorModeValue,
   Skeleton,
   Link as ChakraLink,
   useBreakpoint,
 } from '@chakra-ui/react';
+
+import Image from 'next/image';
+import profilePic from '../public/static/images/profile.jpg';
+
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
@@ -16,7 +20,7 @@ import AboutTerminal from '@/components/AboutTerminal';
 
 export default function Home(): React.ReactElement {
   const [imageLoad, setImageLoad] = useState(false);
-  const bp = useBreakpoint();
+  const bp = useBreakpoint() as string;
   return (
     <>
       <NextSeo title='Home' />
@@ -46,11 +50,12 @@ export default function Home(): React.ReactElement {
           >
             <Skeleton isLoaded={imageLoad} boxSize='250px' borderRadius='2xl' m='auto'>
               <Image
-                flexGrow={3}
-                borderRadius='2xl'
-                boxSize='250px'
-                src='./static/images/profile.jpg'
-                objectFit='cover'
+                // flexGrow={3}
+
+                // borderRadius='2xl'
+                // boxSize='250px'
+                src={profilePic}
+                // objectFit='cover'
                 alt='Roland Kiraly'
                 onLoad={() => setImageLoad(true)}
               />
