@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "jsx": "react-jsx",
