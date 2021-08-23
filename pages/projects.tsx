@@ -25,6 +25,7 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
             My projects
           </LineHeading>
           <Text mt={3}>A quick collection of my projects.</Text>
+
           <VStack direction='column' my={16} width='full' height='full' maxWidth='5xl' spacing={10}>
             {pinnedRepos
               .sort(

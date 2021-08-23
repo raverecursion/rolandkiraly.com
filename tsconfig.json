@@ -3,7 +3,7 @@
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "target": "es6",
     "module": "commonjs",
     "lib": [
@@ -46,8 +46,11 @@
       ],
       "@/hooks/*": [
         "src/hooks/*"
-      ],
-    }
+      ]
+    },
+    "allowJs": true,
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "next-env.d.ts",
