@@ -47,7 +47,7 @@ export const pinnedRepos: pinnedRepoType[] = [
     id: `a-bnb-ish`,
     stack: ['React', 'Redux', 'Styled-Components'],
     name: `Airbnb-ish`,
-    deployedLink: 'https://noir-clothing-testing.herokuapp.com/',
+    deployedLink: 'https://air-bn-b-ish.vercel.app/',
     image: '/static/images/screenshots/screenshot-abnb.png',
     longDescription: `Inspired by Airbnb's website with 2020's Olympics theme`,
   },
