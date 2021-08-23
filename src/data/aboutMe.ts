@@ -20,7 +20,7 @@ const info = (props: { colorMode: ColorMode }) => [
   },
   {
     input: 'self.education',
-    return: '"B.Sc Computer Science - University of Birkbeck"',
+    return: '"BSc Computer Science - University of Birkbeck"',
   },
   {
     input: 'self.skills',
