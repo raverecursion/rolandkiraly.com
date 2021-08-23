@@ -14,10 +14,6 @@ export default async function handler(
         return 25;
       }
 
-      if (process.env.VERCEL_ENV !== 'production') {
-        return currentViews;
-      }
-
       return currentViews + 1;
     });
 

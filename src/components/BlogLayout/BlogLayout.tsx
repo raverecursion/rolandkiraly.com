@@ -14,7 +14,6 @@ import {
 import { format, parseISO } from 'date-fns';
 import ViewCounter from '../ViewCounter';
 // import Link from 'next/link';
-import { EditIcon } from '@chakra-ui/icons';
 import { frontMatterType } from '@/utils/mdx';
 import BlogBadge from '../BlogBadge';
 import { NextSeo } from 'next-seo';
@@ -133,9 +132,7 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
         </Flex>
         <Box mb={16} px={2} maxWidth='4xl' width='full' className={'blog-content'}>
           {children}
-          <HStack justifyContent='flex-start' mr='auto' mt={5}>
-            <EditIcon />
-          </HStack>
+          <HStack justifyContent='flex-start' mr='auto' mt={5}></HStack>
         </Box>
       </chakra.article>
     </>

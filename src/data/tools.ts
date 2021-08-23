@@ -37,7 +37,7 @@ const Tools: ToolType[] = [
   {
     id: `fiddler`,
     category: [`web`, `api`],
-    link: `https://react-icons.github.io/react-icons/`,
+    link: `https://www.telerik.com/fiddler`,
     labels: ['Testing', 'Debug'],
     name: `Fiddler`,
     description: `Web Debugging proxy and troubleshooting tool `,
