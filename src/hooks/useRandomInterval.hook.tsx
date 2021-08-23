@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 
-const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 
-const useRandomInterval = (callback, minDelay, maxDelay) => {
-  const timeoutId = React.useRef(null);
+const useRandomInterval = (
+  callback: () => void,
+  minDelay: number | null,
+  maxDelay: number | null
+) => {
+  const timeoutId = React.useRef(undefined) as MutableRefObject<number | undefined>;
   const savedCallback = React.useRef(callback);
   React.useEffect(() => {
     savedCallback.current = callback;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Stack, Tag, Text, useColorModeValue, VStack } from '@chakra-ui/react';
 import { repoType } from '@/pages/api/github';
 

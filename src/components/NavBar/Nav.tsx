@@ -38,10 +38,6 @@ const links = [
         name: `Tools`,
         link: `/tools`,
       },
-      {
-        name: `Links`,
-        link: `/links`,
-      },
     ],
   },
 ];

@@ -55,6 +55,7 @@ const withMDX = require('@next/mdx')({
 module.exports = withMDX({
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   webpack5: true,
+
   images: {
     domains: [
       'i.scdn.co',
