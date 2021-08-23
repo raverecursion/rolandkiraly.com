@@ -25,7 +25,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
       res.setHeader(`Cache-Control`, `public, s-maxage=60, stale-while-revalidate=60`);
 
       return res.status(200).json({ artists, songs, recentlyPlayed });
-    } catch (e: unknown) {
+    } catch (e) {
       // eslint-disable-next-line no-console
       if (e.response.status === 429) {
         return res.status(429).json({ message: `you need to wait ${e.headers[`Retry-After`]}` });
