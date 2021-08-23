@@ -41,11 +41,11 @@ const Statement = ({
       if (displayedIndex >= input.length) {
         setTimeout(() => {
           setShowResult(true);
-        }, 200);
+        }, 150);
 
         setTimeout(() => {
           setVisibleIndex(visibleIndex + 1);
-        }, 500);
+        }, 3500);
       }
     }
     if (visibleIndex === 0 && displayedIndex === 0) {

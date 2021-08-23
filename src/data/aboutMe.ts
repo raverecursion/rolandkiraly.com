@@ -34,7 +34,7 @@ const info = (props: { colorMode: ColorMode }) => [
       props
     )}" rel="noopener" href="https://www.linkedin.com/in/kiralyroland/">LinkedIn</a>", "<a style="${style(
       props
-    )}" rel="noopener" href="https://github.com/innellea">Github</a>"`,
+    )}" rel="noopener" href="https://github.com/innellea">Github</a>"]`,
   },
 ];
 
