@@ -16,7 +16,7 @@ const info = (props: { colorMode: ColorMode }) => [
 
   {
     input: 'self.interests',
-    return: '["web dev", "biology", "neuoroscience"]',
+    return: '["web dev", "biology", "neuroscience"]',
   },
   {
     input: 'self.education',
