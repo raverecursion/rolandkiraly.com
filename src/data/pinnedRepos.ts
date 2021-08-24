@@ -36,10 +36,10 @@ export const pinnedRepos: pinnedRepoType[] = [
   },
 
   {
-    id: `hype-train`,
+    id: `noir`,
     stack: ['React', 'Redux', 'Styled-Components'],
     name: `Noir E-Commerce`,
-    deployedLink: 'https://noir-clothing-testing.herokuapp.com/',
+    deployedLink: 'https://noir-e-commerce.herokuapp.com/',
     image: '/static/images/screenshots/screenshot-hype-train.png',
     longDescription: `A fully functional E-Commerce app I built during the latter half of quarantine`,
   },
