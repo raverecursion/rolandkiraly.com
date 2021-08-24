@@ -162,7 +162,7 @@ const AnimatedTitle = () => (
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 265 43'
       fill='none'
-      stroke={useColorModeValue('brand.600', 'brand.300')}
+      stroke={useColorModeValue('brand.600', 'brand.400')}
       strokeWidth='5px'
       strokeLinecap='round'
       strokeLinejoin='round'
