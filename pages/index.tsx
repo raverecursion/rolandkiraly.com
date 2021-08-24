@@ -33,8 +33,6 @@ export default function Home(): React.ReactElement {
         mx='auto'
         pt={{ base: '28', sm: '14', md: '16', xl: '20' }}
       >
-        {/* Im not actually too sure why this needs to be here, but without this additional flex
-        the body doesn't begin at the top of the page... */}
         <Flex
           direction='column'
           justifyContent={{ base: 'center', md: 'flex-start' }}
@@ -56,7 +54,7 @@ export default function Home(): React.ReactElement {
                 // boxSize='250px'
                 src={profilePic}
                 // objectFit='cover'
-                alt='Roland Kiraly'
+                alt='Roland Király'
                 onLoad={() => setImageLoad(true)}
               />
             </Skeleton>

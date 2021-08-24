@@ -18,6 +18,7 @@ import BlogPost from '@/components/BlogPost';
 import LineHeading from '@/components/LineHeading';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BiChevronDown } from 'react-icons/bi';
+import { NextSeo } from 'next-seo';
 
 function Blog({ posts }: { posts: any }): React.ReactElement {
   const [filter, setFilter] = useState('');
@@ -36,69 +37,73 @@ function Blog({ posts }: { posts: any }): React.ReactElement {
   }
 
   return (
-    <Flex direction='column' alignItems='center' width='full' minH='100vh' mx='auto' maxW='5xl'>
-      <LineHeading
-        mt='28'
-        fontSize={{ base: `3xl`, sm: `4xl`, md: `5xl`, lg: `6xl` }}
-        textAlign='center'
-      >
-        Blog Posts
-      </LineHeading>
-      <Text mt={3} px={5}>
-        Here are a collection of my blog posts, with {posts.length} blog
-        {posts.length > 1 && 's'} :)
-      </Text>
-      <Box mt='16' width='full'>
-        <Flex
-          width='full'
-          direction={{ base: 'column', md: 'row' }}
-          my={7}
-          px={{ base: 5, sm: 2 }}
-          justifyContent='space-between'
-        >
-          <InputGroup maxWidth={{ base: 'full', md: '200px' }} mb={{ base: 5, md: 0 }}>
-            <InputLeftElement pointerEvents='none'>
-              <AiOutlineSearch color='gray.600' />
-            </InputLeftElement>
-            <Input
-              variant='filled'
-              type='text'
-              placeholder='Search'
-              _placeholder={{
-                color: useColorModeValue('gray.800', 'whiteAlpha.200'),
-              }}
-              onChange={e => setFilter(e.target.value.toLowerCase())}
-            />
-          </InputGroup>
+    <>
+      <NextSeo title='Blog' />
 
-          <Menu>
-            <MenuButton as={Button} rightIcon={<BiChevronDown />}>
-              Sort by...
-            </MenuButton>
-            <MenuList zIndex={998}>
-              <MenuItem
-                zIndex={999}
-                isDisabled={sort === 'recent'}
-                onClick={() => setSort('recent')}
-              >
-                Recent
-              </MenuItem>
-              <MenuItem zIndex={999} isDisabled={sort === 'old'} onClick={() => setSort('old')}>
-                Oldest
-              </MenuItem>
-            </MenuList>
-          </Menu>
-        </Flex>
-        {filteredBlogPosts.length === 0 && (
-          <Text fontSize='2xl' textAlign='center'>
-            No Results :(
-          </Text>
-        )}
-        {filteredBlogPosts.map((frontMatter: any) => (
-          <BlogPost key={frontMatter.title} {...frontMatter} />
-        ))}
-      </Box>
-    </Flex>
+      <Flex direction='column' alignItems='center' width='full' minH='100vh' mx='auto' maxW='5xl'>
+        <LineHeading
+          mt='28'
+          fontSize={{ base: `3xl`, sm: `4xl`, md: `5xl`, lg: `6xl` }}
+          textAlign='center'
+        >
+          Blog Posts
+        </LineHeading>
+        <Text mt={3} px={5}>
+          Here are a collection of my blog posts, with {posts.length} blog
+          {posts.length > 1 && 's'} :)
+        </Text>
+        <Box mt='16' width='full'>
+          <Flex
+            width='full'
+            direction={{ base: 'column', md: 'row' }}
+            my={7}
+            px={{ base: 5, sm: 2 }}
+            justifyContent='space-between'
+          >
+            <InputGroup maxWidth={{ base: 'full', md: '200px' }} mb={{ base: 5, md: 0 }}>
+              <InputLeftElement pointerEvents='none'>
+                <AiOutlineSearch color='gray.600' />
+              </InputLeftElement>
+              <Input
+                variant='filled'
+                type='text'
+                placeholder='Search'
+                _placeholder={{
+                  color: useColorModeValue('gray.800', 'whiteAlpha.200'),
+                }}
+                onChange={e => setFilter(e.target.value.toLowerCase())}
+              />
+            </InputGroup>
+
+            <Menu>
+              <MenuButton as={Button} rightIcon={<BiChevronDown />}>
+                Sort by...
+              </MenuButton>
+              <MenuList zIndex={998}>
+                <MenuItem
+                  zIndex={999}
+                  isDisabled={sort === 'recent'}
+                  onClick={() => setSort('recent')}
+                >
+                  Recent
+                </MenuItem>
+                <MenuItem zIndex={999} isDisabled={sort === 'old'} onClick={() => setSort('old')}>
+                  Oldest
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+          {filteredBlogPosts.length === 0 && (
+            <Text fontSize='2xl' textAlign='center'>
+              No Results :(
+            </Text>
+          )}
+          {filteredBlogPosts.map((frontMatter: any) => (
+            <BlogPost key={frontMatter.title} {...frontMatter} />
+          ))}
+        </Box>
+      </Flex>
+    </>
   );
 }
 
