@@ -4,4 +4,4 @@
 - Styled-Components
 - Redux
 - Three.JS
--
+- <!-- //TODO add react helmet / fix favicon  -->
