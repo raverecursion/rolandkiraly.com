@@ -61,7 +61,7 @@
     "@babel/preset-react": "7.14.5",
     "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "13.1.0",
-    "@firebase/app-types": "0.6.3",
+    "@firebase/app-types": "0.7.0",
     "@types/mdx-js__react": "1.5.4",
     "@types/node": "16.7.1",
     "@types/react": "17.0.19",
