@@ -106,7 +106,7 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
 const dev = process.env.NODE_ENV === 'development';
 export const server = dev ? 'http://localhost:3000' : `https://${process.env.VERCEL_URL}`;
 
-export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
+export async function getServerSideProps(): Promise<{ props: ProjectsProps }> {
   const response = await fetch(`${server}/api/github`);
   const { stars, repos, followers } = await response.json();
 
