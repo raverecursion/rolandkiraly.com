@@ -1,13 +1,17 @@
 /* eslint-disable no-console */
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { Box, Button, Flex, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import { NextSeo } from 'next-seo';
 import LineHeading from '@/components/LineHeading';
-import RepoCard from '@/components/RepoCard';
+const RepoCard = dynamic(() => import('@/components/RepoCard'));
+
+// import RepoCard from '@/components/RepoCard';
 import PinnedProjects from '@/components/PinnedProjects';
 import { pinnedRepos, pinnedRepoType } from '@/data/pinnedRepos';
 import { repoType } from '@/pages/api/github';
+
 interface ProjectsProps {
   stars: number;
   repos: repoType[];
@@ -53,7 +57,7 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
             as='a'
             href='https://github.com/innellea'
             variant='ghost'
-            colorScheme='brand'
+            colorScheme='main'
             size='lg'
             mt={5}
             leftIcon={<FaGithub />}
@@ -102,7 +106,7 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
 const dev = process.env.NODE_ENV === 'development';
 export const server = dev ? 'http://localhost:3000' : `https://${process.env.VERCEL_URL}`;
 
-export async function getServerSideProps(): Promise<{ props: ProjectsProps }> {
+export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
   const response = await fetch(`${server}/api/github`);
   const { stars, repos, followers } = await response.json();
 

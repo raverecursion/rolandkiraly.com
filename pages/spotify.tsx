@@ -87,7 +87,7 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
               as='a'
               href='https://open.spotify.com/user/toobig4uu?si=4fb6a31a6f624b7b'
               variant='ghost'
-              colorScheme='brand'
+              colorScheme='main'
               size='lg'
               mt={5}
               leftIcon={

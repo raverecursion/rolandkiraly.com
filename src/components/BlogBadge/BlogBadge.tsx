@@ -8,7 +8,7 @@ const BlogBadge = ({ tag }: BlogBadgeProps): JSX.Element => {
   return (
     <Badge
       colorScheme={
-        [`gray`, `brand`, `teal`, `blue`, `green`, `pink`, `orange`, `red`, `purple`, `yellow`][
+        [`gray`, `main`, `teal`, `blue`, `green`, `pink`, `orange`, `red`, `purple`, `yellow`][
           (tag.charCodeAt(0) + tag.charCodeAt(1)) % 10
         ]
       }

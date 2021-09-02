@@ -32,7 +32,7 @@ const Tags = ({ tags }: TagsProps): JSX.Element => {
         <Tag
           key={tag}
           colorScheme={`${
-            ['red', 'orange', 'yellow', 'green', 'brand', 'teal', 'blue', 'cyan', 'pink', 'purple'][
+            ['red', 'orange', 'yellow', 'green', 'main', 'teal', 'blue', 'cyan', 'pink', 'purple'][
               getTotalCharCode(tag) % 10
             ]
           }`}

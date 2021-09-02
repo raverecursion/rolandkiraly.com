@@ -73,7 +73,7 @@ const Sparkles = ({
     ['#FFC700', 'var(--chakra-colors-yellow-300)'],
     ['#FFC700', 'var(--chakra-colors-yellow-300)'],
     ['var(--chakra-colors-purple-500)', 'var(--chakra-colors-purple-300)'],
-    ['var(--chakra-colors-brand-500)', 'var(--chakra-colors-brand-300)'],
+    ['var(--chakra-colors-main-500)', 'var(--chakra-colors-main-300)'],
     ['var(--chakra-colors-pink-500)', 'var(--chakra-colors-pink-300)'],
   ],
   children,

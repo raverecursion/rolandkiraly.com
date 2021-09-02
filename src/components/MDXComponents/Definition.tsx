@@ -2,29 +2,6 @@ import { chakra, Tooltip, useColorModeValue } from '@chakra-ui/react';
 
 import { transparentize } from '@chakra-ui/theme-tools';
 
-// interface DefinitionProps {
-//   link?: string;
-//   definition: string;
-//   term: string;
-// }
-
-// export const Definition = ({
-//   link,
-//   term,
-//   definition,
-// }: DefinitionProps): React.ReactElement => {
-//   if (link) {
-//     return (
-//       <Link href={link} passHref>
-//         <ChakraLink>
-//           <DefinitionStyles {...{ term, definition, link }} />
-//         </ChakraLink>
-//       </Link>
-//     );
-//   }
-//   return <DefinitionStyles {...{ term, definition }} />;
-// };
-
 interface DefinitionStylesProps {
   term: string;
   definition: string;
@@ -37,8 +14,8 @@ export const Definition = ({ term, definition, link }: DefinitionStylesProps): J
       placement={'top'}
       label={definition}
       hasArrow
-      bg={useColorModeValue('brand.50', '#314044')}
-      color={useColorModeValue('brand.900', 'brand.200')}
+      bg={useColorModeValue('main.50', '#314044')}
+      color={useColorModeValue('main.900', 'main.200')}
       fontWeight='semibold'
       fontSize='md'
       py={1}
@@ -50,7 +27,7 @@ export const Definition = ({ term, definition, link }: DefinitionStylesProps): J
         as={link ? 'a' : 'span'}
         href={link ? link : null}
         //@ts-expect-error transparentize tools return string, but types are not applicable.
-        bg={useColorModeValue('brand.50', transparentize('brand.200', 0.16))}
+        bg={useColorModeValue('main.50', transparentize('main.200', 0.16))}
         borderRadius={'md'}
         _hover={{ cursor: link ? 'pointer' : 'normal' }}
         px={2}
@@ -58,7 +35,7 @@ export const Definition = ({ term, definition, link }: DefinitionStylesProps): J
         mr={'1px'}
         position='relative'
         verticalAlign='middle'
-        color={useColorModeValue('brand.900', 'brand.200')}
+        color={useColorModeValue('main.900', 'main.200')}
         fontWeight='semibold'
       >
         <chakra.span
@@ -73,7 +50,7 @@ export const Definition = ({ term, definition, link }: DefinitionStylesProps): J
           mr={1}
           my={'auto'}
           verticalAlign={'middle'}
-          bg={useColorModeValue('brand.800', 'brand.200')}
+          bg={useColorModeValue('main.800', 'main.200')}
         />
         {term}
       </chakra.span>

@@ -9,7 +9,7 @@ interface AsideProps {
 }
 
 const colors = {
-  positive: 'brand',
+  positive: 'main',
   negative: 'red',
   neutral: 'blue',
   warning: 'orange',

@@ -14,7 +14,7 @@ const ToggleTheme = (): JSX.Element => {
       title={`Switch to ${text} mode`}
       variant='ghost'
       onClick={toggleMode}
-      colorScheme='brand'
+      colorScheme='main'
       icon={<SwitchIcon size={25} />}
     />
   );

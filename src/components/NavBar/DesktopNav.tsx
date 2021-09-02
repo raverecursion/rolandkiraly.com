@@ -42,8 +42,8 @@ function DesktopNav({ links }: { links: any }): JSX.Element {
                   left: 0,
                   bg:
                     colorMode === 'light'
-                      ? transparentize(`brand.500`, 0.46)
-                      : transparentize(`brand.500`, 0.36),
+                      ? transparentize(`main.500`, 0.46)
+                      : transparentize(`main.500`, 0.36),
                   zIndex: -1,
                 }}
                 _hover={{
@@ -79,8 +79,8 @@ function DesktopNav({ links }: { links: any }): JSX.Element {
                   left: 0,
                   bg:
                     colorMode === 'light'
-                      ? transparentize(`brand.500`, 0.46)
-                      : transparentize(`brand.500`, 0.36),
+                      ? transparentize(`main.500`, 0.46)
+                      : transparentize(`main.500`, 0.36),
                   zIndex: -1,
                 }}
                 _hover={{
