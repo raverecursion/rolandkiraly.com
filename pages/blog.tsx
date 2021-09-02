@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import React, { useState, lazy } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
