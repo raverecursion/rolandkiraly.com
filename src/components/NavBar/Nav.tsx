@@ -72,7 +72,7 @@ function Nav(): JSX.Element {
         top: 0,
         left: 0,
         height: '6px',
-        bg: useColorModeValue('brand.500', 'brand.300'),
+        bg: useColorModeValue('main.500', 'main.300'),
         position: 'absolute',
         zIndex: 9999,
       }}
@@ -114,8 +114,8 @@ function Nav(): JSX.Element {
                     left: 0,
                     bg:
                       colorMode === 'light'
-                        ? transparentize(`brand.500`, 0.46)
-                        : transparentize(`brand.500`, 0.36),
+                        ? transparentize(`main.500`, 0.46)
+                        : transparentize(`main.500`, 0.36),
                     zIndex: -1,
                   }}
                   _hover={{
@@ -162,7 +162,7 @@ const AnimatedTitle = () => (
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 265 43'
       fill='none'
-      stroke={useColorModeValue('brand.600', 'brand.400')}
+      stroke={useColorModeValue('main.600', 'main.400')}
       strokeWidth='5px'
       strokeLinecap='round'
       strokeLinejoin='round'

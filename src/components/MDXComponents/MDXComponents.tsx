@@ -148,7 +148,7 @@ export const CustomUnorderedList = ({ children }: { children: React.ReactNode })
 
 export const CustomListItem = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
-    <ListItem color={useColorModeValue('brand.500', 'brand.300')}>
+    <ListItem color={useColorModeValue('main.500', 'main.300')}>
       <chakra.span color={useColorModeValue('black', 'white')}>{children}</chakra.span>
     </ListItem>
   );
@@ -257,7 +257,7 @@ const lightCodeStyles = css`
 
   .token.function,
   .token.class-name {
-    color: var(--chakra-colors-brand-600);
+    color: var(--chakra-colors-main-600);
   }
 
   .token.property,
@@ -298,7 +298,7 @@ const darkCodeStyles = css`
 
   .token.function,
   .token.class-name {
-    color: var(--chakra-colors-brand-300);
+    color: var(--chakra-colors-main-300);
   }
 
   .token.property,

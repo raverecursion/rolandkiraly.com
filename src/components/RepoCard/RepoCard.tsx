@@ -43,7 +43,7 @@ const RepoCard = ({ repo, i }: RepoCardProps): JSX.Element => {
             {repo.name}
           </Text>
           {repo.language && (
-            <Tag colorScheme='brand' size='sm' ml={2} mt='auto' height='22px'>
+            <Tag colorScheme='main' size='sm' ml={2} mt='auto' height='22px'>
               {repo.language}
             </Tag>
           )}

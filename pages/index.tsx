@@ -12,11 +12,11 @@ import {
 
 import Image from 'next/image';
 import profilePic from '../public/static/images/profile.jpg';
-
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
-import AboutTerminal from '@/components/AboutTerminal';
+const AboutTerminal = dynamic(() => import('@/components/AboutTerminal'));
 
 export default function Home(): React.ReactElement {
   const [imageLoad, setImageLoad] = useState(false);
@@ -49,7 +49,6 @@ export default function Home(): React.ReactElement {
             <Skeleton isLoaded={imageLoad} boxSize='250px' borderRadius='2xl' m='auto'>
               <Image
                 // flexGrow={3}
-
                 // borderRadius='2xl'
                 // boxSize='250px'
                 src={profilePic}
@@ -67,8 +66,8 @@ export default function Home(): React.ReactElement {
             >
               <Heading
                 bgGradient={`linear(to-r, ${useColorModeValue(
-                  `brand.600`,
-                  `brand.400`
+                  `main.600`,
+                  `main.200`
                 )}, ${useColorModeValue(`teal.600`, `teal.400`)}, ${useColorModeValue(
                   `blue.600`,
                   `blue.300`
@@ -98,6 +97,7 @@ export default function Home(): React.ReactElement {
               </chakra.p>
             </Flex>
           </Flex>
+
           {!['base', 'sm'].includes(bp) && <AboutTerminal />}
         </Flex>
       </Box>

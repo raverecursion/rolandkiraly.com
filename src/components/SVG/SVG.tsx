@@ -52,7 +52,7 @@ type SVGProps = {
 
 const SVG = ({
   stroke = false,
-  color = `${[`gray`, `brand`, `teal`, `blue`, `green`][Math.floor(Math.random() * 6)]}.${
+  color = `${[`gray`, `main`, `teal`, `blue`, `green`][Math.floor(Math.random() * 6)]}.${
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useColorModeValue([`500`, `600`, `700`, `800`, `900`], [`50`, `100`, `200`, `300`, `400`])[
       Math.floor(Math.random() * 5)

@@ -106,7 +106,7 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
           width='full'
         >
           <Flex alignItems='center' my={{ base: 2, md: 0 }}>
-            <Tag size='lg' colorScheme='brand' borderRadius='full'>
+            <Tag size='lg' colorScheme='main' borderRadius='full'>
               <Avatar
                 name={frontMatter.by.name}
                 size='xs'

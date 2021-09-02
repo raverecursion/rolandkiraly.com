@@ -41,7 +41,7 @@ const AboutTerminal = (): JSX.Element => {
         <Stack isInline ml={5}>
           <StatusButton bg={useColorModeValue('red.400', 'red.400')} />
           <StatusButton bg={useColorModeValue('orange.400', 'orange.400')} />
-          <StatusButton bg={useColorModeValue('brand.600', 'brand.500')} />
+          <StatusButton bg={useColorModeValue('main.600', 'main.500')} />
         </Stack>
         <Flex
           mx={'auto'}

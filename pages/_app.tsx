@@ -36,34 +36,34 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
   return (
     <>
       <DefaultSeo
-        defaultTitle='Roland Kiraly'
-        titleTemplate='%s | Roland Kiraly'
+        defaultTitle='Roland Király'
+        titleTemplate='%s | Roland Király'
         additionalLinkTags={[
           {
             rel: 'icon',
-            href: './static/images/favicon.ico',
+            href: '/static/images/favicon.ico',
           },
         ]}
         openGraph={{
-          title: `Roland Kiraly`,
+          title: `Roland Király`,
           type: `website`,
-          site_name: `Roland Kiraly`,
+          site_name: `Roland Király`,
           images: [
             {
-              url: `.http://localhost:3000/static/images/favicon.ico`,
+              url: `/static/images/profile.jpg`,
               alt: `Profile Picture`,
             },
           ],
         }}
-        description='Personal website and portfolio of Roland Kiraly'
+        description='Personal website and portfolio of Roland Király'
       />
       <ChakraProvider theme={theme}>
         <PlausibleProvider
-          domain='rolandkiraly.com'
+          domain='rolandKirály.com'
           selfHosted
           trackOutboundLinks
           enabled={process.env.NODE_ENV === 'production'}
-          customDomain={'https://rolandkiraly.com'}
+          customDomain={'https://rolandKirály.com'}
         >
           <QueryClientProvider client={queryClient}>
             <MDXProvider components={MDXComponents}>

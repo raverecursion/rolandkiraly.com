@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+
 import React, { useState } from 'react';
 import {
   Box,
@@ -14,7 +16,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { getAllFilesFrontMatter } from '@/utils/mdx';
-import BlogPost from '@/components/BlogPost';
+const BlogPost = dynamic(() => import('@/components/BlogPost'));
 import LineHeading from '@/components/LineHeading';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BiChevronDown } from 'react-icons/bi';

@@ -10,7 +10,7 @@ const theme = extendTheme({
   components: {
     Link: {
       baseStyle: props => ({
-        color: mode('brand.600', 'brand.300')(props),
+        color: mode('main.600', 'main.300')(props),
       }),
     },
     Heading: {
@@ -49,25 +49,26 @@ const theme = extendTheme({
         bg: 'none',
 
         _selection: {
-          color: props.colorMode === `dark` ? `black` : `white`,
-          bg: props.colorMode === `dark` ? `brand.300` : `brand.600`,
+          //TODO Change red 50 to white
+          color: props.colorMode === `dark` ? `black` : `Red 50`,
+          bg: props.colorMode === `dark` ? `main.300` : `main.600`,
         },
       },
     }),
   },
   colors: {
-    brand: {
-      primary: `#47d185`,
-      50: `#e1f7eb`,
-      100: `#c4f0d8`,
-      200: `#a7e9c5`,
-      300: `#8ae1b1`,
-      400: `#50d38b`,
-      500: `#32cc77`,
-      600: `#2bae66`,
-      700: `#1d7444`,
-      800: `#1d7444`,
-      900: `#155733`,
+    main: {
+      primary: '#1DB954',
+      '50': '#C6F6D7',
+      '100': '#AFF3C7',
+      '200': '#83ECA8',
+      '300': '#57E589',
+      '400': '#2BDE6A',
+      '500': '#1DB954',
+      '600': '#168D40',
+      '700': '#0F612C',
+      '800': '#083518',
+      '900': '#010904',
     },
   },
 });

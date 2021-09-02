@@ -95,10 +95,10 @@ The movie API returns a lot of data, which is saved to a mongoDB database.<br />
 And that's it! One problem down 🌟.
 
 <VStack mt={2} alignItems='flex-start'>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Automatic movie details
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly>
+  <Checkbox colorScheme='main' isReadOnly>
     Authentication
   </Checkbox>
 </VStack>
@@ -110,13 +110,13 @@ Oh no did someone say... [authentication](https://www.youtube.com/watch?v=9mSVzG
 Another topic down! This is easy.
 
 <VStack mt={2} alignItems='flex-start'>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Automatic movie details
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Authentication
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly>
+  <Checkbox colorScheme='main' isReadOnly>
     Nice design
   </Checkbox>
 </VStack>
@@ -198,16 +198,16 @@ return (
 />
 
 <VStack mt={2} alignItems='flex-start'>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Automatic movie details
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Authentication
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Nice design <em>...I mean I like it</em>
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly>
+  <Checkbox colorScheme='main' isReadOnly>
     Dark mode
   </Checkbox>
 </VStack>
@@ -231,7 +231,7 @@ const { toggleColorMode } = useColorMode();
   title={`Switch to ${text} mode`}
   variant="ghost"
   onClick={toggleColorMode}
-  colorScheme="brand"
+  colorScheme="main"
   icon={<SwitchIcon size={25} />}
 />;
 ```
@@ -239,16 +239,16 @@ const { toggleColorMode } = useColorMode();
 🎉🎉🎉
 
 <VStack mt={2} alignItems='flex-start'>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Automatic movie details
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Authentication
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     Nice design <em>...I mean I like it</em>
   </Checkbox>
-  <Checkbox colorScheme='brand' isReadOnly defaultIsChecked>
+  <Checkbox colorScheme='main' isReadOnly defaultIsChecked>
     <Sparkles>Dark mode</Sparkles>
   </Checkbox>
 </VStack>

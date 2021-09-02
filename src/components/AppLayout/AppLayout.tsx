@@ -2,10 +2,11 @@ import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import UpDown from '../Animations';
 import SVG from '../SVG';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import Nav from '../NavBar/Nav';
-import Footer from '../Footer/Footer';
+const Footer = dynamic(() => import('../Footer/Footer'));
 
 interface AppLayoutProps {
   children: React.ReactElement;
@@ -15,7 +16,7 @@ const AppLayout = ({ children }: AppLayoutProps): JSX.Element => {
   const router = useRouter();
 
   return (
-    <>
+    <Box maxH='100vh'>
       <NextSeo
         canonical={`https://www.rolandkiraly.com/${router.asPath}`}
         openGraph={{ url: `https://www.rolandkiraly.com/${router.asPath}` }}
@@ -44,7 +45,7 @@ const AppLayout = ({ children }: AppLayoutProps): JSX.Element => {
         {children}
       </Box>
       <Footer />
-    </>
+    </Box>
   );
 };
 
