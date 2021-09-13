@@ -11,7 +11,7 @@ const info = (props: { colorMode: ColorMode }) => [
   },
   {
     input: 'self.currentLocation',
-    return: '"Manchester, UK"',
+    return: '["Manchester, UK"]',
   },
 
   {
@@ -19,8 +19,8 @@ const info = (props: { colorMode: ColorMode }) => [
     return: '["web dev", "biology", "neuroscience"]',
   },
   {
-    input: 'self.education',
-    return: '"Computer Science - University of Birkbeck"',
+    input: 'self.hobbies',
+    return: '["hiking", "mountain-climbing"]',
   },
   {
     input: 'self.skills',
