@@ -31,9 +31,9 @@ const info = (props: { colorMode: ColorMode }) => [
     input: 'self.contactMe()',
     return: `
     ["<a style="${style(
-      props
+      props,
     )}" rel="noopener" href="https://www.linkedin.com/in/kiralyroland/">LinkedIn</a>", "<a style="${style(
-      props
+      props,
     )}" rel="noopener" href="https://github.com/innellea">Github</a>"]`,
   },
 ];

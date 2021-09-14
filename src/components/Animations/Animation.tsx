@@ -17,8 +17,8 @@ const UpDown = ({ children, type }: UpDownProps): JSX.Element => {
         type === `wide`
           ? `UpDownWideAnimation`
           : type === `slow`
-          ? `UpDownSlowAnimation`
-          : `UpDownAnimation`
+            ? `UpDownSlowAnimation`
+            : `UpDownAnimation`
       }
       top={0}
       left={0}

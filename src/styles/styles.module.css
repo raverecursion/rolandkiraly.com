@@ -1,8 +1,8 @@
 .image {
-  border-radius: 1rem;
+    border-radius: 1rem;
 }
 
 .artistImage {
-  border-radius: 1rem;
-  filter: brightness(25%);
+    border-radius: 1rem;
+    filter: brightness(25%);
 }

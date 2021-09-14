@@ -21,7 +21,8 @@ const icons = {
 
   box: {
     shape: (
-      <path d='M28,2V28H2V2H28m.13-2H1.88A1.88,1.88,0,0,0,0,1.88V28.13A1.88,1.88,0,0,0,1.88,30H28.13A1.87,1.87,0,0,0,30,28.13V1.88A1.88,1.88,0,0,0,28.13,0Z' />
+      <path
+        d='M28,2V28H2V2H28m.13-2H1.88A1.88,1.88,0,0,0,0,1.88V28.13A1.88,1.88,0,0,0,1.88,30H28.13A1.87,1.87,0,0,0,30,28.13V1.88A1.88,1.88,0,0,0,28.13,0Z' />
     ),
     viewBox: `0 0 30 30`,
   },
@@ -51,20 +52,20 @@ type SVGProps = {
 };
 
 const SVG = ({
-  stroke = false,
-  color = `${[`gray`, `main`, `teal`, `blue`, `green`][Math.floor(Math.random() * 6)]}.${
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useColorModeValue([`500`, `600`, `700`, `800`, `900`], [`50`, `100`, `200`, `300`, `400`])[
-      Math.floor(Math.random() * 5)
-    ]
-  }`,
-  zIndex = -500,
-  width,
-  icon,
-  left,
-  top,
-  hiddenMobile = false,
-}: SVGProps): JSX.Element => (
+               stroke = false,
+               color = `${[`gray`, `main`, `teal`, `blue`, `green`][Math.floor(Math.random() * 6)]}.${
+                 // eslint-disable-next-line react-hooks/rules-of-hooks
+                 useColorModeValue([`500`, `600`, `700`, `800`, `900`], [`50`, `100`, `200`, `300`, `400`])[
+                   Math.floor(Math.random() * 5)
+                   ]
+               }`,
+               zIndex = -500,
+               width,
+               icon,
+               left,
+               top,
+               hiddenMobile = false,
+             }: SVGProps): JSX.Element => (
   <chakra.svg
     sx={{
       position: `absolute`,
