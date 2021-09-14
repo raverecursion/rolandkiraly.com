@@ -1,13 +1,12 @@
 import {
   Box,
+  chakra,
   Flex,
   Heading,
-  // Image,
-  chakra,
-  useColorModeValue,
-  Skeleton,
   Link as ChakraLink,
+  Skeleton,
   useBreakpoint,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 import Image from 'next/image';
@@ -16,6 +15,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
+
 const AboutTerminal = dynamic(() => import('@/components/AboutTerminal'));
 
 export default function Home(): React.ReactElement {
@@ -67,10 +67,10 @@ export default function Home(): React.ReactElement {
               <Heading
                 bgGradient={`linear(to-r, ${useColorModeValue(
                   `main.600`,
-                  `main.200`
+                  `main.200`,
                 )}, ${useColorModeValue(`teal.600`, `teal.400`)}, ${useColorModeValue(
                   `blue.600`,
-                  `blue.300`
+                  `blue.300`,
                 )})`}
                 className='moving-grad'
                 bgClip='text'

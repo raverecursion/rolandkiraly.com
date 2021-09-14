@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import {
-  Box,
-  Link as ChakraLink,
-  Text,
-  useColorMode,
-  Flex,
-  UnorderedList,
-  BoxProps,
-  useColorModeValue,
-  chakra,
-  ListItem,
   AspectRatio,
+  Box,
+  BoxProps,
+  chakra,
   ChakraProps,
+  Flex,
+  Link as ChakraLink,
+  ListItem,
+  Text,
+  UnorderedList,
+  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import LineHeading from '../LineHeading';
 import React from 'react';
@@ -42,7 +42,7 @@ export const CustomLink = (props: CustomLinkProps): JSX.Element => {
           {...props}
           cursor='pointer'
           _after={{
-            content: "'#'",
+            content: '\'#\'',
             visibility: 'hidden',
 
             color: colorMode === 'light' ? 'gray.400' : 'gray.600',
@@ -77,12 +77,12 @@ interface CustomImageProps {
 }
 
 export const CustomImage = ({
-  alt,
-  ratio,
-  border,
-  chakraWidth,
-  ...props
-}: ImageProps & CustomImageProps): JSX.Element => {
+                              alt,
+                              ratio,
+                              border,
+                              chakraWidth,
+                              ...props
+                            }: ImageProps & CustomImageProps): JSX.Element => {
   return (
     <Flex direction='column' my={7}>
       {ratio ? (
@@ -204,7 +204,7 @@ export const CustomPre = (props: ChakraProps): JSX.Element => {
           scrollPaddingBottom: '10px',
           scrollbarColor: useColorModeValue(
             'var(--chakra-colors-gray-300) var(--chakra-colors-gray-100)',
-            'var(--chakra-colors-gray-700) var(--chakra-colors-gray-900)'
+            'var(--chakra-colors-gray-700) var(--chakra-colors-gray-900)',
           ),
           scrollbarWidth: 'thin',
         }}

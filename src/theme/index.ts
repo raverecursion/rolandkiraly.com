@@ -1,5 +1,5 @@
 import { ChakraTheme, extendTheme, ThemeComponentProps } from '@chakra-ui/react';
-import { transparentize, mode } from '@chakra-ui/theme-tools';
+import { mode, transparentize } from '@chakra-ui/theme-tools';
 
 // 2. Call `extendTheme` and pass your custom values
 

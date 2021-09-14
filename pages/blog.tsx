@@ -16,11 +16,12 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { getAllFilesFrontMatter } from '@/utils/mdx';
-const BlogPost = dynamic(() => import('@/components/BlogPost'));
 import LineHeading from '@/components/LineHeading';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BiChevronDown } from 'react-icons/bi';
 import { NextSeo } from 'next-seo';
+
+const BlogPost = dynamic(() => import('@/components/BlogPost'));
 
 function Blog({ posts }: { posts: any }): React.ReactElement {
   const [filter, setFilter] = useState('');
@@ -113,4 +114,5 @@ export async function getStaticProps(): Promise<{ props: { posts: any } }> {
   const posts = await getAllFilesFrontMatter();
   return { props: { posts } };
 }
+
 export default Blog;

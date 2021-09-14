@@ -1,14 +1,14 @@
 import {
-  Box,
-  Image,
-  Text,
-  useColorModeValue,
-  Flex,
-  SimpleGrid,
   AspectRatio,
-  useColorMode,
-  Tag,
+  Box,
+  Flex,
+  Image,
+  SimpleGrid,
   Stack,
+  Tag,
+  Text,
+  useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { usePalette } from 'react-palette';
 import { ToolType } from '@/data/tools';
@@ -40,7 +40,7 @@ export const ToolCard = ({ name, description, link, id, labels }: ToolType): JSX
             overflow='hidden'
             boxShadow={`inset 0 0 20px 5px ${useColorModeValue(
               `${data.darkVibrant}19`,
-              `${data.lightVibrant}19`
+              `${data.lightVibrant}19`,
             )}`}
             borderRadius='2xl'
           >

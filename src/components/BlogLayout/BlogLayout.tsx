@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  Heading,
-  Avatar,
-  chakra,
-  Box,
-  Flex,
-  // Link as ChakraLink,
-  Text,
-  useColorModeValue,
-  HStack,
-  Tag,
-} from '@chakra-ui/react';
+import { Avatar, Box, chakra, Flex, Heading, HStack, Tag, Text, useColorModeValue } from '@chakra-ui/react';
 import { format, parseISO } from 'date-fns';
 import ViewCounter from '../ViewCounter';
 // import Link from 'next/link';
@@ -18,7 +7,7 @@ import { frontMatterType } from '@/utils/mdx';
 import BlogBadge from '../BlogBadge';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
-import { Global, css } from '@emotion/react';
+import { css, Global } from '@emotion/react';
 
 interface BlogLayoutProps {
   children: React.ReactNode;

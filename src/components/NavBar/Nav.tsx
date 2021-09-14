@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import {
-  Box,
-  Flex,
-  Link as ChakraLink,
-  chakra,
-  useColorModeValue,
-  useColorMode,
-} from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { Box, chakra, Flex, Link as ChakraLink, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import MobileNav from './MobileNav';
@@ -15,7 +8,6 @@ import { useRouter } from 'next/router';
 import { transparentize } from '@chakra-ui/theme-tools';
 import styled from '@emotion/styled';
 import useScrollPosition from '@/hooks/useScrollPosition.hook';
-import { useEffect } from 'react';
 
 const links = [
   {
@@ -180,6 +172,7 @@ const CustomChakraLink = styled(ChakraLink)`
   &:hover {
     text-decoration: none;
   }
+
   &:hover .path-under {
     transform: translateY(6px);
   }

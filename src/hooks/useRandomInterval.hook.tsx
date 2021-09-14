@@ -5,7 +5,7 @@ const random = (min: number, max: number) => Math.floor(Math.random() * (max - m
 const useRandomInterval = (
   callback: () => void,
   minDelay: number | null,
-  maxDelay: number | null
+  maxDelay: number | null,
 ) => {
   const timeoutId = React.useRef(undefined) as MutableRefObject<number | undefined>;
   const savedCallback = React.useRef(callback);
@@ -26,7 +26,7 @@ const useRandomInterval = (
     }
     return () => window.clearTimeout(timeoutId.current);
   }, [minDelay, maxDelay]);
-  const cancel = React.useCallback(function () {
+  const cancel = React.useCallback(function() {
     window.clearTimeout(timeoutId.current);
   }, []);
   return cancel;

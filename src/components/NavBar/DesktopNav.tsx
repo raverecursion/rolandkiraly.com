@@ -2,12 +2,12 @@ import React from 'react';
 import {
   HStack,
   Icon,
+  Link as ChakraLink,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
   useColorMode,
-  Link as ChakraLink,
 } from '@chakra-ui/react';
 import { transparentize } from '@chakra-ui/theme-tools';
 import Link from 'next/link';

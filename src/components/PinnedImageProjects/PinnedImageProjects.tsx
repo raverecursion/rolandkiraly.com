@@ -1,14 +1,14 @@
 import {
   AspectRatio,
   Box,
+  Flex,
   Heading,
-  Text,
-  VStack,
-  useBreakpointValue,
-  useColorMode,
   Link as ChakraLink,
   Stack,
-  Flex,
+  Text,
+  useBreakpointValue,
+  useColorMode,
+  VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
@@ -27,10 +27,10 @@ interface PinnedImageProjectsProps {
 }
 
 const PinnedImageProjects = ({
-  projectData,
-  repo,
-  left,
-}: PinnedImageProjectsProps): JSX.Element => {
+                               projectData,
+                               repo,
+                               left,
+                             }: PinnedImageProjectsProps): JSX.Element => {
   const { colorMode } = useColorMode();
   const bp = useBreakpointValue({ base: `base`, lg: `lg` });
   if (bp === `lg`) {

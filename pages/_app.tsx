@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
 import '../src/styles/global.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Router from 'next/router';
 import Loader from '@/components/Loader';
 import { DefaultSeo } from 'next-seo';

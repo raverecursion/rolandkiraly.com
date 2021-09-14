@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Link as ChakraLink,
-  Text,
-  useColorModeValue,
+  Flex,
   Heading,
   HStack,
+  Link as ChakraLink,
+  Text,
   useBreakpointValue,
-  Flex,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import formatDistance from 'date-fns/formatDistance';
 import { useQuery } from 'react-query';
@@ -56,7 +56,7 @@ const BlogPost = ({ title, summary, slug, tags, publishedAt }: BlogPostProps): J
           >
             <HStack mb={{ base: 2, sm: 0 }} sx={{ marginLeft: '0px!important' }}>
               {tags &&
-                tags.slice(0, spliceBP).map((tag, i) => <BlogBadge tag={tag} key={i.toString()} />)}
+              tags.slice(0, spliceBP).map((tag, i) => <BlogBadge tag={tag} key={i.toString()} />)}
             </HStack>
             <Text
               fontWeight='medium'

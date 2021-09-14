@@ -1,7 +1,14 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "next", "prettier"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next",
+    "prettier"
+  ],
   "env": {
     "es6": true,
     "browser": true,
@@ -33,13 +40,18 @@
     "no-console": [
       2,
       {
-        "allow": ["warn", "error"]
+        "allow": [
+          "warn",
+          "error"
+        ]
       }
     ]
   },
   "overrides": [
     {
-      "files": ["*.test.js*"],
+      "files": [
+        "*.test.js*"
+      ],
       "env": {
         "jest": true
       },

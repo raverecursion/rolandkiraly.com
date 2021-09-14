@@ -1,4 +1,4 @@
-import { NextApiResponse, NextApiRequest } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export interface repoType {
   id: string;
@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const userResponse = await fetch(`https://api.github.com/users/innellea`, requestOptions);
   const userReposResponse = await fetch(
     `https://api.github.com/users/innellea/repos?per_page=10`,
-    requestOptions
+    requestOptions,
   );
 
   const user = await userResponse.json();
@@ -38,6 +38,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const sendRepos = notForked.map(
     ({
+       id,
+       name,
+       html_url,
+       created_at,
+       pushed_at,
+       language,
+       description,
+       fork,
+       stargazers_count,
+     }: repoType) => ({
       id,
       name,
       html_url,
@@ -47,17 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       description,
       fork,
       stargazers_count,
-    }: repoType) => ({
-      id,
-      name,
-      html_url,
-      created_at,
-      pushed_at,
-      language,
-      description,
-      fork,
-      stargazers_count,
-    })
+    }),
   );
   return res.status(200).json({
     followers: user.followers,

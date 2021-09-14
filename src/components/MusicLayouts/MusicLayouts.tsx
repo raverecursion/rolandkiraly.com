@@ -1,7 +1,7 @@
 import { Flex, SimpleGrid, Text } from '@chakra-ui/react';
 import React from 'react';
 import LineHeading from '../LineHeading';
-import { SongCard, ArtistCard } from './MusicCards';
+import { ArtistCard, SongCard } from './MusicCards';
 
 export const TopSongs = ({ songs }: { songs: any }): JSX.Element => (
   <Flex

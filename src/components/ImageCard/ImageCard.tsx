@@ -1,14 +1,14 @@
 import {
   AspectRatio,
   Box,
-  useColorModeValue,
   Flex,
-  VStack,
   Heading,
   Link as ChakraLink,
-  Text,
   Stack,
+  Text,
   useColorMode,
+  useColorModeValue,
+  VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';

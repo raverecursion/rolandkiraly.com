@@ -4,10 +4,10 @@ import {
   Button,
   CloseButton,
   IconButton,
+  Link as ChakraLink,
   useColorModeValue,
   useDisclosure,
   VStack,
-  Link as ChakraLink,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import { AiOutlineMenu } from 'react-icons/ai';

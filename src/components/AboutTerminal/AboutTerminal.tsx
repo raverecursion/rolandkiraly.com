@@ -1,13 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  Flex,
-  useColorModeValue,
-  chakra,
-  Stack,
-  Text,
-  VStack,
-  useColorMode,
-} from '@chakra-ui/react';
+import { chakra, Flex, Stack, Text, useColorMode, useColorModeValue, VStack } from '@chakra-ui/react';
 import content from '@/data/aboutMe';
 import styled from '@emotion/styled';
 import Statement from '../Statement';

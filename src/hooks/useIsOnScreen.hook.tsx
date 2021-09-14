@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function useIsOnscreen(
   elementRef: React.MutableRefObject<undefined>,
-  defaultState = false
+  defaultState = false,
 ) {
   const [isOnscreen, setIsOnscreen] = React.useState(defaultState);
 

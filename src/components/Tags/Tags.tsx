@@ -1,11 +1,11 @@
 import { getTotalCharCode } from '@/utils/utils';
-import { Stack, Tag, TagLeftIcon, TagLabel, useMediaQuery } from '@chakra-ui/react';
+import { Stack, Tag, TagLabel, TagLeftIcon, useMediaQuery } from '@chakra-ui/react';
 import { BsFillLightningFill } from 'react-icons/bs';
 import { FaDiscord, FaReact } from 'react-icons/fa';
 import { IoLogoNodejs } from 'react-icons/io';
-import { SiMarkdown } from 'react-icons/si';
-import { NextJSIcon, SemanticIcon, BootstrapIcon, TypeScriptIcon, TailwindCSSIcon } from '../Icons';
-import { SiPostman } from 'react-icons/si';
+import { SiMarkdown, SiPostman } from 'react-icons/si';
+import { BootstrapIcon, NextJSIcon, SemanticIcon, TailwindCSSIcon, TypeScriptIcon } from '../Icons';
+
 const tagDict = {
   React: FaReact,
   'Next.JS': NextJSIcon,
@@ -33,8 +33,8 @@ const Tags = ({ tags }: TagsProps): JSX.Element => {
           key={tag}
           colorScheme={`${
             ['red', 'orange', 'yellow', 'green', 'main', 'teal', 'blue', 'cyan', 'pink', 'purple'][
-              getTotalCharCode(tag) % 10
-            ]
+            getTotalCharCode(tag) % 10
+              ]
           }`}
           size={isLargerThan800 ? 'md' : 'sm'}
         >

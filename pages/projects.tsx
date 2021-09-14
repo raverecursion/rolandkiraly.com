@@ -5,12 +5,12 @@ import { Box, Button, Flex, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import { NextSeo } from 'next-seo';
 import LineHeading from '@/components/LineHeading';
-const RepoCard = dynamic(() => import('@/components/RepoCard'));
-
 // import RepoCard from '@/components/RepoCard';
 import PinnedProjects from '@/components/PinnedProjects';
 import { pinnedRepos, pinnedRepoType } from '@/data/pinnedRepos';
 import { repoType } from '@/pages/api/github';
+
+const RepoCard = dynamic(() => import('@/components/RepoCard'));
 
 interface ProjectsProps {
   stars: number;
@@ -35,9 +35,9 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
               .sort(
                 (a: pinnedRepoType, b: pinnedRepoType) =>
                   new Date(
-                    repos.filter((x: repoType) => x.name === a.id)[0]?.created_at
+                    repos.filter((x: repoType) => x.name === a.id)[0]?.created_at,
                   ).getTime() -
-                  new Date(repos.filter((y: repoType) => y.name === b.id)[0]?.created_at).getTime()
+                  new Date(repos.filter((y: repoType) => y.name === b.id)[0]?.created_at).getTime(),
               )
               .reverse()
               .map((data: pinnedRepoType, index) => (
@@ -81,7 +81,7 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
         >
           {repos
             .sort(
-              (a: any, b: any) => new Date(a.pushed_at).getTime() - new Date(b.pushed_at).getTime()
+              (a: any, b: any) => new Date(a.pushed_at).getTime() - new Date(b.pushed_at).getTime(),
             )
             .reverse()
             .map((repo: repoType, index: number) => (

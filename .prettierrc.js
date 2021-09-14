@@ -7,4 +7,4 @@ module.exports = {
   trailingComma: 'es5',
   arrowParens: 'avoid',
   htmlWhitespaceSensitivity: 'css',
-}
+};

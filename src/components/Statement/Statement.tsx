@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, chakra, useColorModeValue, VStack, Text } from '@chakra-ui/react';
+import { chakra, Flex, Text, useColorModeValue, VStack } from '@chakra-ui/react';
 import { useHotkeys } from 'react-hotkeys-hook';
 import Head from 'next/head';
 
@@ -12,12 +12,12 @@ interface StatementProps {
 }
 
 const Statement = ({
-  input,
-  return: result,
-  visibleIndex,
-  thisIndex,
-  setVisibleIndex,
-}: StatementProps): JSX.Element => {
+                     input,
+                     return: result,
+                     visibleIndex,
+                     thisIndex,
+                     setVisibleIndex,
+                   }: StatementProps): JSX.Element => {
   const [displayedIndex, setDisplayedIndex] = React.useState(0);
   const [showResult, setShowResult] = React.useState(false);
   useHotkeys('enter', () => {
@@ -78,7 +78,8 @@ const Statement = ({
             fontWeight='bold'
           >
             &gt;
-          </chakra.span>{' '}
+          </chakra.span>
+          {' '}
           {shownInput}
         </Flex>
         <Text

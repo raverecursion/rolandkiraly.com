@@ -1,22 +1,14 @@
 import React from 'react';
-import {
-  Box,
-  Heading,
-  SimpleGrid,
-  Text,
-  useBreakpointValue,
-  Button,
-  Icon,
-  Flex,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Icon, SimpleGrid, Text, useBreakpointValue } from '@chakra-ui/react';
 import { Fade } from 'react-awesome-reveal';
-import { RecentSongs, TopArtists, TopSongs, CurrentlyPlaying } from '@/components/MusicLayouts';
+import { CurrentlyPlaying, RecentSongs, TopArtists, TopSongs } from '@/components/MusicLayouts';
 import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
 
 interface ListFadeProps {
   children: any;
 }
+
 const ListFade = ({ children }: ListFadeProps): React.ReactElement => {
   const bp = useBreakpointValue({ base: false, md: true });
   if (!bp) {
@@ -32,6 +24,7 @@ const ListFade = ({ children }: ListFadeProps): React.ReactElement => {
 interface HeadingFadeProps {
   children: any;
 }
+
 const HeadingFade = ({ children }: HeadingFadeProps): React.ReactElement => {
   const bp = useBreakpointValue({ base: false, md: true });
   if (!bp) {
@@ -54,7 +47,7 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
   const { error: currentError, data: currentlyPlaying } = useQuery(
     `currentlyPlaying`,
     () => fetch(`/api/get-now-playing`).then(res => res.json()),
-    { refetchOnMount: true }
+    { refetchOnMount: true },
   );
   if (error || currentError) {
     return <div>There was an error fetching data from spotify</div>;
@@ -123,6 +116,7 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
     </>
   );
 }
+
 const dev = process.env.NODE_ENV === 'development';
 export const server = dev ? 'http://localhost:3000' : `https://${process.env.VERCEL_URL}`;
 

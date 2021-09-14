@@ -7,6 +7,7 @@ import mdxPrism from '@mapbox/rehype-prism';
 import remarkSlug from 'remark-slug';
 import remarkAutoLinkHeadings from 'remark-autolink-headings';
 import codeTitle from 'remark-code-titles';
+
 export const getFiles = (type: string) =>
   fs.readdirSync(path.join(process.cwd(), `src`, `data`, type));
 
@@ -40,7 +41,7 @@ export async function getAllFilesFrontMatter() {
   return files.reduce((allPosts: any, postSlug: string) => {
     const source = fs.readFileSync(
       path.join(process.cwd(), `src`, `data`, `blog`, postSlug),
-      `utf8`
+      `utf8`,
     );
     const { data } = matter(source);
 

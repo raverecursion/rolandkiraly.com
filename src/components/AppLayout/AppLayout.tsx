@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import Nav from '../NavBar/Nav';
+
 const Footer = dynamic(() => import('../Footer/Footer'));
 
 interface AppLayoutProps {

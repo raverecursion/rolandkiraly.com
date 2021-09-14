@@ -1,15 +1,15 @@
 import {
-  Stack,
-  Text,
-  useColorModeValue,
   Box,
   chakra,
-  Link as ChakraLink,
-  Icon,
-  Tooltip,
   Flex,
+  Icon,
+  Link as ChakraLink,
   SimpleGrid,
+  Stack,
+  Text,
+  Tooltip,
   useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useQuery } from 'react-query';
@@ -21,7 +21,7 @@ const Footer = (): JSX.Element => {
   const { error, data: currentlyPlaying } = useQuery(
     `currentlyPlaying`,
     () => fetch(`/api/get-now-playing`).then(res => res.json()),
-    { refetchOnMount: true }
+    { refetchOnMount: true },
   );
 
   return (
