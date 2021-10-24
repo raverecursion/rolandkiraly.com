@@ -53,7 +53,7 @@
     "reading-time": "1.4.0",
     "remark-autolink-headings": "7.0.1",
     "remark-code-titles": "0.1.2",
-    "remark-slug": "7.0.0",
+    "remark-slug": "7.0.1",
     "tslib": "2.3.1"
   },
   "devDependencies": {
