@@ -19,9 +19,9 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body id={'de_body'}>
-        <ColorModeScript />
-        <Main />
-        <NextScript />
+          <ColorModeScript initialColorMode='dark' />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
