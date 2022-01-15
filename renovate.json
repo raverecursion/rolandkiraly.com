@@ -1,42 +1,17 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "commitBodyTable": true,
-  "requiredStatusChecks": null,
-  "packageRules": [
-    {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "groupName": "devDependencies (non-major)",
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": [
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "automerge": true
-    },
-    {
-      "matchPackageNames": [
-        "aws-sdk"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "automerge": true
-    }
-  ]
+    "extends": ["config:base"],
+  
+    "rebaseLabel": "rebase",
+    "rebaseWhen": "auto",
+    "requiredStatusChecks": [],
+    "packageRules": [
+        {
+            "updateTypes": ["minor", "patch", "pin", "digest"],
+            "automerge": true
+        },
+        {
+            "depTypeList": ["devDependencies"],
+            "automerge": true
+        }
+    ]
 }
