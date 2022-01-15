@@ -37,7 +37,7 @@
     "gray-matter": "4.0.3",
     "mdx-prism": "0.3.4",
     "next-mdx-remote": "3.0.8",
-    "next-plausible": "2.1.4",
+    "next-plausible": "3.1.4",
     "next-seo": "4.28.1",
     "next-transpile-modules": "8.0.0",
     "prop-types": "15.7.2",
