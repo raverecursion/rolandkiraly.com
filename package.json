@@ -60,7 +60,7 @@
     "@babel/core": "7.16.7",
     "@babel/preset-env": "7.16.8",
     "@babel/preset-react": "7.16.7",
-    "@commitlint/cli": "16.0.2",
+    "@commitlint/cli": "16.0.3",
     "@commitlint/config-conventional": "16.0.0",
     "@firebase/app-types": "0.7.0",
     "@types/mdx-js__react": "1.5.5",
