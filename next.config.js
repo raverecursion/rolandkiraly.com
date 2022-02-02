@@ -1,10 +1,10 @@
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' unpkg.com 'unsafe-eval' 'unsafe-inline' *localhost* *.rolandkiraly.com;
-  child-src *.youtube.com *.google.com *.twitter.com;
+  child-src 'self' 'unsafe-inline' *.youtube.com *.google.com *.twitter.com;
   style-src 'self' unpkg.com 'unsafe-inline' *.googleapis.com;
   img-src * blob: data:;
-  media-src 'none';
+  media-src 'self';
   connect-src *;
   font-src 'self' fonts.gstatic.com;
 `;
@@ -23,7 +23,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {
     key: 'X-Frame-Options',
-    value: 'DENY',
+    value: 'ALLOW',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {
@@ -49,20 +49,32 @@ const securityHeaders = [
 ];
 
 const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
+  extension: /\.(md|mdx)$/,
 });
 
 module.exports = withMDX({
-  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  pageExtensions: ['ts', 'tsx'],
+  webpack: (config, { dev, isServer }) => {
+    if (dev) return config;
+    if (!isServer) return config;
+    const missingVars = [
+      'SPOTIFY_CLIENT_ID',
+      'SPOTIFY_CLIENT_SECRET',
+      'SPOTIFY_REFRESH_TOKEN',
+      'FIREBASE_PRIVATE_KEY',
+      'FIREBASE_CLIENT_EMAIL',
+    ].filter((envVar) => !process.env[envVar]);
+    if (missingVars.length) {
+      throw new Error(
+        'You are missing some vital environment variables: ' +
+          missingVars.join(', ')
+      );
+    }
+    return config;
+  },
   webpack5: true,
-
   images: {
-    domains: [
-      'i.scdn.co',
-      'user-images.githubusercontent.com',
-      'github.com',
-      'raw.githubusercontent.com',
-    ],
+    domains: ['i.scdn.co', 'user-images.githubusercontent.com'],
   },
   async headers() {
     return [
