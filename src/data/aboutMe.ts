@@ -20,7 +20,7 @@ const info = (props: { colorMode: ColorMode }) => [
   },
   {
     input: 'self.hobbies',
-    return: '["extreme-sports", "cooking"]',
+    return: '["extreme-sports"]',
   },
   {
     input: 'self.skills',
@@ -41,3 +41,5 @@ const info = (props: { colorMode: ColorMode }) => [
 ];
 
 export default info;
+
+// <a href="mailto:webmaster@example.com">Jon Doe</a>.
