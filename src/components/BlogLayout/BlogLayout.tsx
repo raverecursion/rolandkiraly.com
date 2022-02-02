@@ -1,20 +1,35 @@
 import React from 'react';
-import { Avatar, Box, chakra, Flex, Heading, HStack, Tag, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Heading,
+  Avatar,
+  chakra,
+  Box,
+  Flex,
+  Link as ChakraLink,
+  Text,
+  useColorModeValue,
+  HStack,
+  Tag,
+} from '@chakra-ui/react';
 import { format, parseISO } from 'date-fns';
 import ViewCounter from '../ViewCounter';
-// import Link from 'next/link';
+import Link from 'next/link';
+import { EditIcon } from '@chakra-ui/icons';
 import { frontMatterType } from '@/utils/mdx';
 import BlogBadge from '../BlogBadge';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
-import { css, Global } from '@emotion/react';
+import { Global, css } from '@emotion/react';
 
 interface BlogLayoutProps {
   children: React.ReactNode;
   frontMatter: frontMatterType;
 }
 
-const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => {
+const BlogLayout = ({
+  children,
+  frontMatter,
+}: BlogLayoutProps): JSX.Element => {
   const router = useRouter();
   return (
     <>
@@ -29,7 +44,7 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
       <NextSeo
         title={frontMatter.title}
         description={frontMatter.summary}
-        canonical={`https://rolandkiraly.com/${router.asPath}`}
+        canonical={`https://rolandkiraly.com${router.asPath}`}
         twitter={{
           cardType: 'summary_large_image',
           site: '@Mikerophone_',
@@ -38,37 +53,38 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
           title: frontMatter.title,
           site_name: 'Roland Kiraly',
           description: frontMatter.summary,
-          url: `https://rolandkiraly.com/${router.asPath}`,
+          url: `https://rolandkiraly.com${router.asPath}/`,
+
           type: 'article',
           article: {
             publishedTime: new Date(frontMatter.publishedAt).toISOString(),
           },
           images: [
             {
-              url: `https://rolandkiraly.com/${frontMatter.image}`,
+              url: `https://rolandkiraly.com${frontMatter.image}`,
             },
           ],
         }}
       />
       <chakra.article
         id={'blogArticle'}
-        display='flex'
-        flexDirection='column'
-        justifyContent='flex-start'
-        alignItems='center'
-        pt='20'
-        width='full'
-        minH='100vh'
-        mx='auto'
-        maxWidth='2xl'
+        display="flex"
+        flexDirection="column"
+        justifyContent="flex-start"
+        alignItems="center"
+        pt="20"
+        width="full"
+        minH="100vh"
+        mx="auto"
+        maxWidth="2xl"
       >
         {frontMatter.tags && (
           <Flex
-            width='full'
+            width="full"
             px={3}
             mb={4}
-            justifyContent='flex-start'
-            flexWrap='wrap'
+            justifyContent="flex-start"
+            flexWrap="wrap"
             sx={{ rowGap: '10px', columnGap: '10px' }}
           >
             {frontMatter.tags.map((tag, i) => (
@@ -86,19 +102,19 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
         </Heading>
         <Flex
           direction={{ base: 'column', md: 'row' }}
-          justifyContent='space-between'
+          justifyContent="space-between"
           alignItems={{ base: 'center', md: 'flex-start' }}
-          maxW='2xl'
+          maxW="2xl"
           mx={'auto'}
           mb={12}
           mt={5}
-          width='full'
+          width="full"
         >
-          <Flex alignItems='center' my={{ base: 2, md: 0 }}>
-            <Tag size='lg' colorScheme='main' borderRadius='full'>
+          <Flex alignItems="center" my={{ base: 2, md: 0 }}>
+            <Tag size="lg" colorScheme="brand" borderRadius="full">
               <Avatar
                 name={frontMatter.by.name}
-                size='xs'
+                size="xs"
                 ml={-2}
                 mr={2}
                 src={frontMatter.by.avatar}
@@ -119,9 +135,29 @@ const BlogLayout = ({ children, frontMatter }: BlogLayoutProps): JSX.Element => 
             <ViewCounter slug={frontMatter.slug} />
           </Text>
         </Flex>
-        <Box mb={16} px={2} maxWidth='4xl' width='full' className={'blog-content'}>
+        <Box
+          mb={16}
+          px={2}
+          maxWidth="4xl"
+          width="full"
+          className={'blog-content'}
+        >
           {children}
-          <HStack justifyContent='flex-start' mr='auto' mt={5}></HStack>
+          <HStack justifyContent="flex-start" mr="auto" mt={5}>
+            <EditIcon />
+            <Link
+              href={`https://github.com/innellea/rolandkiraly.com/edit/main/src/data/blog/${frontMatter.slug}.mdx`}
+              passHref
+            >
+              <ChakraLink
+                color={useColorModeValue('gray.900', 'white')}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Edit on github
+              </ChakraLink>
+            </Link>
+          </HStack>
         </Box>
       </chakra.article>
     </>

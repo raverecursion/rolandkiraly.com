@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 
 const ViewCounter = ({ slug }: { slug: string | null }): JSX.Element => {
   const { data } = useQuery(`views${slug}`, () => {
-    return fetch(`/api/views/${slug}`).then(res => res.json());
+    return fetch(`/api/views/${slug}`).then((res) => res.json());
   });
   const views = new Number(data?.total);
 

@@ -9,12 +9,12 @@ const getInitialState = () => {
   // occur.
   return isRenderingOnServer ? true : !window.matchMedia(QUERY).matches;
 };
-
-function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(getInitialState);
+function usePrefersReducedMotion(): any {
+  const [prefersReducedMotion, setPrefersReducedMotion] =
+    React.useState(getInitialState);
   React.useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY);
-    const listener = (event: { matches: any }) => {
+    const listener = (event) => {
       setPrefersReducedMotion(!event.matches);
     };
     mediaQueryList.addListener(listener);

@@ -1,14 +1,14 @@
 import {
   AspectRatio,
   Box,
+  useColorModeValue,
   Flex,
+  VStack,
   Heading,
   Link as ChakraLink,
-  Stack,
   Text,
+  Stack,
   useColorMode,
-  useColorModeValue,
-  VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
@@ -28,16 +28,16 @@ const ImageCard = ({ projectData, repo }: ImageCardProps): JSX.Element => {
 
   return (
     <Flex
-      direction='column'
-      borderRadius='2xl'
+      direction="column"
+      borderRadius="2xl"
       bg={useColorModeValue('white', 'gray.900')}
-      border='1px solid'
-      boxShadow='lg'
-      width='full'
+      border="1px solid"
+      boxShadow="lg"
+      width="full"
       borderColor={useColorModeValue('gray.200', 'gray.700')}
     >
-      <AspectRatio ratio={16 / 9} border='none'>
-        <Box borderTopRadius='2xl'>
+      <AspectRatio ratio={16 / 9} border="none">
+        <Box borderTopRadius="2xl">
           <Image
             alt={projectData.name + ' screenshot'}
             src={projectData.image || ''}
@@ -46,11 +46,26 @@ const ImageCard = ({ projectData, repo }: ImageCardProps): JSX.Element => {
         </Box>
       </AspectRatio>
       <VStack borderBottomRadius={'2xl'} py={5} px={4} spacing={1}>
-        <Stack isInline justifyContent='space-between' alignItems='center' width='full'>
-          <Heading fontFamily='Ubuntu' isTruncated maxWidth='full' fontSize={'2xl'}>
+        <Stack
+          isInline
+          justifyContent="space-between"
+          alignItems="center"
+          width="full"
+        >
+          <Heading
+            fontFamily="Ubuntu"
+            isTruncated
+            maxWidth="full"
+            fontSize={'2xl'}
+          >
             {projectData.name}
           </Heading>
-          <Stack isInline justifyContent='flex-end' alignItems='center' spacing={4}>
+          <Stack
+            isInline
+            justifyContent="flex-end"
+            alignItems="center"
+            spacing={4}
+          >
             {repo?.html_url && (
               <Link href={repo?.html_url} passHref>
                 <ChakraLink isExternal className={`hover-link-${colorMode}`}>
@@ -68,11 +83,11 @@ const ImageCard = ({ projectData, repo }: ImageCardProps): JSX.Element => {
           </Stack>
         </Stack>
         <Text
-          maxWidth='100%'
-          maxHeight='100%'
-          height='100%'
-          width='100%'
-          textAlign='left'
+          maxWidth="100%"
+          maxHeight="100%"
+          height="100%"
+          width="100%"
+          textAlign="left"
           color={useColorModeValue(`gray.500`, `gray.500`)}
         >
           <Tags tags={projectData?.stack} />

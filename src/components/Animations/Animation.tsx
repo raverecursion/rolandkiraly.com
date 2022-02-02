@@ -10,15 +10,15 @@ interface UpDownProps {
 const UpDown = ({ children, type }: UpDownProps): JSX.Element => {
   return (
     <chakra.div
-      overflow='hidden'
-      position='absolute'
+      overflow="hidden"
+      position="absolute"
       className={
         // eslint-disable-next-line no-nested-ternary
         type === `wide`
           ? `UpDownWideAnimation`
           : type === `slow`
-            ? `UpDownSlowAnimation`
-            : `UpDownAnimation`
+          ? `UpDownSlowAnimation`
+          : `UpDownAnimation`
       }
       top={0}
       left={0}

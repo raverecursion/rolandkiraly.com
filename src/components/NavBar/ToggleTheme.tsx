@@ -8,13 +8,13 @@ const ToggleTheme = (): JSX.Element => {
   return (
     <IconButton
       mr={{ base: 2, md: 0 }}
-      size='md'
-      fontSize='lg'
+      size="md"
+      fontSize="lg"
       aria-label={`Switch to ${text} mode`}
       title={`Switch to ${text} mode`}
-      variant='ghost'
+      variant="ghost"
       onClick={toggleMode}
-      colorScheme='main'
+      colorScheme="brand"
       icon={<SwitchIcon size={25} />}
     />
   );

@@ -12,7 +12,10 @@ export interface repoType {
   fork: boolean;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> {
   const myHeaders = new Headers();
   myHeaders.append('Authorization', `Basic ${process.env.GITHUB_ACCESS_TOKEN}`);
 
@@ -21,10 +24,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     headers: myHeaders,
   };
 
-  const userResponse = await fetch(`https://api.github.com/users/innellea`, requestOptions);
+  const userResponse = await fetch(
+    `https://api.github.com/users/innellea`,
+    requestOptions
+  );
   const userReposResponse = await fetch(
     `https://api.github.com/users/innellea/repos?per_page=10`,
-    requestOptions,
+    requestOptions
   );
 
   const user = await userResponse.json();
@@ -33,21 +39,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const notForked = repositories.filter((repo: any) => !repo.fork);
 
   const stars =
-    notForked.reduce((a: number, r: { stargazers_count: number }) => a + r.stargazers_count, 0) ||
-    null;
+    notForked.reduce(
+      (a: number, r: { stargazers_count: number }) => a + r.stargazers_count,
+      0
+    ) || null;
 
   const sendRepos = notForked.map(
     ({
-       id,
-       name,
-       html_url,
-       created_at,
-       pushed_at,
-       language,
-       description,
-       fork,
-       stargazers_count,
-     }: repoType) => ({
       id,
       name,
       html_url,
@@ -57,7 +55,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       description,
       fork,
       stargazers_count,
-    }),
+    }: repoType) => ({
+      id,
+      name,
+      html_url,
+      created_at,
+      pushed_at,
+      language,
+      description,
+      fork,
+      stargazers_count,
+    })
   );
   return res.status(200).json({
     followers: user.followers,

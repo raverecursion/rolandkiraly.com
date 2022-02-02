@@ -20,18 +20,32 @@ import { NextSeo } from 'next-seo';
 function Tools(): React.ReactElement {
   return (
     <>
-      <NextSeo title='Tools' />
-      <Flex direction='column' alignItems='center' width='full' minH='100vh' mx='auto' maxW='6xl'>
+      <NextSeo title="Tools" />
+      <Flex
+        direction="column"
+        alignItems="center"
+        width="full"
+        minH="100vh"
+        mx="auto"
+        maxW="6xl"
+      >
         <LineHeading
-          mt='28'
+          mt="28"
           fontSize={{ base: `3xl`, sm: `4xl`, md: `5xl`, lg: `6xl` }}
-          textAlign='center'
+          textAlign="center"
         >
           Tools
         </LineHeading>
         <Text mt={3}>Tools that I find useful</Text>
-        <Tabs variant='soft-rounded' colorScheme='blue' align='center' w='100%' mt='10' mb='24'>
-          <TabList display='flex' flexWrap='wrap'>
+        <Tabs
+          variant="soft-rounded"
+          colorScheme="blue"
+          align="center"
+          w="100%"
+          mt="10"
+          mb="24"
+        >
+          <TabList display="flex" flexWrap="wrap">
             <Tab
               bg={useColorModeValue(`white`, `gray.800`)}
               color={useColorModeValue(`gray.600`, `gray.500`)}
@@ -97,16 +111,16 @@ function Tools(): React.ReactElement {
 
           <TabPanels>
             <TabPanel>
-              <ToolGrid filter='windows' />
+              <ToolGrid filter="windows" />
             </TabPanel>
             <TabPanel>
-              <ToolGrid filter='ui/ux' />
+              <ToolGrid filter="ui/ux" />
             </TabPanel>
             <TabPanel>
-              <ToolGrid filter='web' />
+              <ToolGrid filter="web" />
             </TabPanel>
             <TabPanel>
-              <ToolGrid filter='api' />
+              <ToolGrid filter="api" />
             </TabPanel>
           </TabPanels>
         </Tabs>

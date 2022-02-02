@@ -4,22 +4,25 @@ import readingTime from 'reading-time';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import mdxPrism from '@mapbox/rehype-prism';
-import remarkSlug from 'remark-slug';
+import remark from 'remark-slug';
 import remarkAutoLinkHeadings from 'remark-autolink-headings';
-import codeTitle from 'remark-code-titles';
+import remarkCodeTitles from 'remark-code-titles';
 
-export const getFiles = (type: string) =>
-  fs.readdirSync(path.join(process.cwd(), `src`, `data`, type));
+export const getFiles = (type: string): string[] =>
+  fs.readdirSync(path.join(process.cwd(), `data`, type));
 
-export async function getFileBySlug(type: string, slug: number) {
+export async function getFileBySlug(type: string, slug: number): Promise<any> {
   const source = slug
-    ? fs.readFileSync(path.join(process.cwd(), `src`, `data`, type, `${slug}.mdx`), `utf8`)
-    : fs.readFileSync(path.join(process.cwd(), `src`, `data`, `${type}.mdx`), `utf8`);
+    ? fs.readFileSync(
+        path.join(process.cwd(), `data`, type, `${slug}.mdx`),
+        `utf8`
+      )
+    : fs.readFileSync(path.join(process.cwd(), `data`, `${type}.mdx`), `utf8`);
 
   const { data, content } = matter(source);
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [remarkSlug, [remarkAutoLinkHeadings], codeTitle],
+      remarkPlugins: [remark, [remarkAutoLinkHeadings], remarkCodeTitles],
       rehypePlugins: [mdxPrism],
     },
   });
@@ -35,13 +38,13 @@ export async function getFileBySlug(type: string, slug: number) {
   };
 }
 
-export async function getAllFilesFrontMatter() {
-  const files = fs.readdirSync(path.join(process.cwd(), `src`, `data`, `blog`));
+export async function getAllFilesFrontMatter(): Promise<any> {
+  const files = fs.readdirSync(path.join(process.cwd(), `data`, `blog`));
 
   return files.reduce((allPosts: any, postSlug: string) => {
     const source = fs.readFileSync(
-      path.join(process.cwd(), `src`, `data`, `blog`, postSlug),
-      `utf8`,
+      path.join(process.cwd(), `data`, `blog`, postSlug),
+      `utf8`
     );
     const { data } = matter(source);
 
