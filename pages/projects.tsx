@@ -1,22 +1,19 @@
-/* eslint-disable no-console */
-import dynamic from 'next/dynamic';
 import React from 'react';
 import { Box, Button, Flex, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import { NextSeo } from 'next-seo';
 import LineHeading from '@/components/LineHeading';
-// import RepoCard from '@/components/RepoCard';
+import RepoCard from '@/components/RepoCard';
 import PinnedProjects from '@/components/PinnedProjects';
 import { pinnedRepos, pinnedRepoType } from '@/data/pinnedRepos';
 import { repoType } from '@/pages/api/github';
-
-const RepoCard = dynamic(() => import('@/components/RepoCard'));
 
 interface ProjectsProps {
   stars: number;
   repos: repoType[];
   followers: number;
   revalidate?: number;
+  error?: string;
 }
 
 function Projects({ repos }: ProjectsProps): React.ReactElement {
@@ -48,7 +45,6 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
             My projects
           </LineHeading>
           <Text mt={3}>A quick collection of my projects.</Text>
-
           <VStack
             direction="column"
             my={16}
@@ -61,21 +57,26 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
               .sort(
                 (a: pinnedRepoType, b: pinnedRepoType) =>
                   new Date(
-                    repos.filter(
-                      (x: repoType) => x.name === a.id
-                    )[0]?.created_at
+                    repos.find(
+                      (x: repoType) =>
+                        x.name.toLowerCase() === a.id.toLowerCase()
+                    )?.created_at
                   ).getTime() -
                   new Date(
-                    repos.filter(
-                      (y: repoType) => y.name === b.id
-                    )[0]?.created_at
+                    repos.find(
+                      (y: repoType) =>
+                        y.name.toLowerCase() === b.id.toLowerCase()
+                    )?.created_at
                   ).getTime()
               )
               .reverse()
               .map((data: pinnedRepoType, index) => (
                 <PinnedProjects
                   key={index.toString()}
-                  repo={repos.filter((x: repoType) => x.name === data.id)[0]}
+                  repo={repos.find(
+                    (x: repoType) =>
+                      x.name.toLowerCase() === data.id.toLowerCase()
+                  )}
                   left={index % 2 === 0}
                   projectData={data}
                 />
@@ -91,13 +92,14 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
             as="a"
             href="https://github.com/innellea"
             variant="ghost"
-            colorScheme="main"
+            colorScheme="brand"
             size="lg"
             mt={5}
             leftIcon={<FaGithub />}
           >
             View My Profile
           </Button>
+          {/* Flex ends before SimpleGrid. See Issue #1 https://github.com/innellea/personal-web/issues/1 */}
         </Flex>
 
         <SimpleGrid
@@ -129,23 +131,28 @@ function Projects({ repos }: ProjectsProps): React.ReactElement {
   );
 }
 
-// const getURL = (): string => {
-//   const url =
-//     process?.env?.URL && process.env.URL !== ''
-//       ? process.env.URL
-//       : process?.env?.VERCEL_URL && process.env.VERCEL_URL !== ''
-//       ? process.env.VERCEL_URL
-//       : 'http://localhost:3000';
-//   return url.includes('http') ? url : `https://${url}`;
-// };
+export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
+  let error = null;
+  let response = null;
+  try {
+    response = await fetch(
+      `${
+        process.env.NEXT_PUBLIC_HOST ||
+        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+      }/api/github`
+    );
+    if (!response.ok) {
+      error = `${response.status} ${response.statusText}`;
+    }
+  } catch (e) {
+    console.error(e);
+    error = 'There was an error fetching github stats';
+  }
 
-const dev = process.env.NODE_ENV === 'development';
-export const server = dev
-  ? 'http://localhost:3000'
-  : `https://${process.env.VERCEL_URL}`;
+  if (error) {
+    return { props: { stars: 0, followers: 0, repos: [], error } };
+  }
 
-export async function getServerSideProps(): Promise<{ props: ProjectsProps }> {
-  const response = await fetch(`${server}/api/github`);
   const { stars, repos, followers } = await response.json();
 
   return { props: { stars, repos, followers, revalidate: 600 } };

@@ -1,26 +1,22 @@
 import {
   Box,
-  chakra,
   Flex,
   Heading,
-  Link as ChakraLink,
-  Skeleton,
-  useBreakpoint,
+  Image,
+  chakra,
   useColorModeValue,
+  Skeleton,
+  Link as ChakraLink,
+  useBreakpoint,
 } from '@chakra-ui/react';
-
-import Image from 'next/image';
-import profilePic from '../public/static/images/profile.jpg';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
-
-const AboutTerminal = dynamic(() => import('@/components/AboutTerminal'));
+import AboutTerminal from '@/components/AboutTerminal';
 
 export default function Home(): React.ReactElement {
   const [imageLoad, setImageLoad] = useState(false);
-  const bp = useBreakpoint() as string;
+  const bp = useBreakpoint();
   return (
     <>
       <NextSeo title="Home" />
@@ -33,6 +29,8 @@ export default function Home(): React.ReactElement {
         mx="auto"
         pt={{ base: '28', sm: '14', md: '16', xl: '20' }}
       >
+        {/* Im not actually too sure why this needs to be here, but without this additional flex
+        the body doesn't begin at the top of the page... */}
         <Flex
           direction="column"
           justifyContent={{ base: 'center', md: 'flex-start' }}
@@ -53,12 +51,12 @@ export default function Home(): React.ReactElement {
               m="auto"
             >
               <Image
-                // flexGrow={3}
-                // borderRadius='2xl'
-                // boxSize='250px'
-                src={profilePic}
-                // objectFit='cover'
-                alt="Roland Király"
+                flexGrow={3}
+                borderRadius="2xl"
+                boxSize="250px"
+                src="./static/images/profile.jpg"
+                objectFit="cover"
+                alt="Roland Kiraly"
                 onLoad={() => setImageLoad(true)}
               />
             </Skeleton>
@@ -71,8 +69,8 @@ export default function Home(): React.ReactElement {
             >
               <Heading
                 bgGradient={`linear(to-r, ${useColorModeValue(
-                  `main.600`,
-                  `main.200`
+                  `brand.600`,
+                  `brand.400`
                 )}, ${useColorModeValue(
                   `teal.600`,
                   `teal.400`
@@ -102,7 +100,6 @@ export default function Home(): React.ReactElement {
               </chakra.p>
             </Flex>
           </Flex>
-
           {!['base', 'sm'].includes(bp) && <AboutTerminal />}
         </Flex>
       </Box>

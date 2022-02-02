@@ -41,12 +41,6 @@ export default function MyApp({
       <DefaultSeo
         defaultTitle="Roland Király"
         titleTemplate="%s | Roland Király"
-        additionalLinkTags={[
-          {
-            rel: 'icon',
-            href: '/static/images/favicon.ico',
-          },
-        ]}
         openGraph={{
           title: `Roland Király`,
           type: `website`,

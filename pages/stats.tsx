@@ -1,7 +1,8 @@
 import React from 'react';
+import WIP from '@/components/WIP';
 
 function Stats(): React.ReactElement {
-  return <></>;
+  return <WIP />;
 }
 
 export default Stats;

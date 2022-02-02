@@ -1,20 +1,20 @@
 import React from 'react';
 import {
   Box,
-  Button,
-  Flex,
   Heading,
-  Icon,
   SimpleGrid,
   Text,
   useBreakpointValue,
+  Button,
+  Icon,
+  Flex,
 } from '@chakra-ui/react';
 import { Fade } from 'react-awesome-reveal';
 import {
-  CurrentlyPlaying,
   RecentSongs,
   TopArtists,
   TopSongs,
+  CurrentlyPlaying,
 } from '@/components/MusicLayouts';
 import { NextSeo } from 'next-seo';
 import { useQuery } from 'react-query';
@@ -22,7 +22,6 @@ import { useQuery } from 'react-query';
 interface ListFadeProps {
   children: any;
 }
-
 const ListFade = ({ children }: ListFadeProps): React.ReactElement => {
   const bp = useBreakpointValue({ base: false, md: true });
   if (!bp) {
@@ -38,7 +37,6 @@ const ListFade = ({ children }: ListFadeProps): React.ReactElement => {
 interface HeadingFadeProps {
   children: any;
 }
-
 const HeadingFade = ({ children }: HeadingFadeProps): React.ReactElement => {
   const bp = useBreakpointValue({ base: false, md: true });
   if (!bp) {
@@ -92,9 +90,9 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
           <Flex justifyContent="center">
             <Button
               as="a"
-              href="https://open.spotify.com/user/toobig4uu?si=4fb6a31a6f624b7b"
+              href="https://open.spotify.com/user/31xl7hwxkqrdf6xlt608i3kmg?si=XOKTjryTQdea1kF90ZkOfQ"
               variant="ghost"
-              colorScheme="main"
+              colorScheme="brand"
               size="lg"
               mt={5}
               leftIcon={
@@ -131,18 +129,26 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
   );
 }
 
-const dev = process.env.NODE_ENV === 'development';
-export const server = dev
-  ? 'http://localhost:3000'
-  : `https://${process.env.VERCEL_URL}`;
-
-export async function getServerSideProps(): Promise<{ props: SpotifyProps }> {
-  const response = await fetch(`${server}/api/get-spotify-data`);
+export async function getStaticProps(): Promise<{ props: SpotifyProps }> {
   let error = null;
-  if (response.status !== 200) {
-    error = `There was an error: ${response.status}`;
+  let data = null;
+  try {
+    const response = await fetch(
+      `${
+        process.env.NEXT_PUBLIC_HOST ||
+        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+      }/api/get-spotify-data`
+    );
+    if (response.status !== 200) {
+      error = `There was an error: ${response.status}`;
+    } else {
+      data = await response.json();
+    }
+  } catch (e) {
+    console.error(e);
+    error = 'There was an error fetching data from spotify';
   }
-  const data = await response.json();
+
   return { props: { data, error, revalidate: 60 } };
 }
 
