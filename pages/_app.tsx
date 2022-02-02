@@ -56,7 +56,7 @@ export default function MyApp({
       />
       <ChakraProvider theme={theme}>
         <PlausibleProvider
-          domain="rolandkiraly.com"
+          domain="www.rolandkiraly.com"
           selfHosted
           trackOutboundLinks
           enabled={process.env.NODE_ENV === 'production'}
