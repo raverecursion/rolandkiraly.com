@@ -136,10 +136,7 @@ export async function getStaticProps(): Promise<{ props: ProjectsProps }> {
   let response = null;
   try {
     response = await fetch(
-      `${
-        process.env.NEXT_PUBLIC_HOST ||
-        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-      }/api/github`
+      `${`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}/api/github`
     );
     if (!response.ok) {
       error = `${response.status} ${response.statusText}`;
