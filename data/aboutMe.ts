@@ -1,10 +1,9 @@
-import { ColorMode } from '@chakra-ui/react';
-
-const style = (props: { colorMode: string }) =>
-  `color: var(--chakra-colors-main-${
+const style = (props) =>
+  `color: var(--chakra-colors-brand-${
     props.colorMode === 'light' ? '600' : '300'
   });font-weight: 500;`;
-const info = (props: { colorMode: ColorMode }) => [
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const info = (props: any): { input: string; return: string }[] => [
   {
     input: 'self.learnAboutMe()',
     return: 'Loaded data...',
@@ -31,9 +30,9 @@ const info = (props: { colorMode: ColorMode }) => [
     input: 'self.contactMe()',
     return: `
     ["<a style="${style(
-      props,
+      props
     )}" rel="noopener" href="https://www.linkedin.com/in/kiralyroland/">LinkedIn</a>", "<a style="${style(
-      props,
+      props
     )}" rel="noopener" href="https://github.com/innellea">Github</a>"]`,
   },
 ];

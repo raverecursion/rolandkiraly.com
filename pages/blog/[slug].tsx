@@ -4,17 +4,20 @@ import BlogLayout from '@/components/BlogLayout';
 import { getFileBySlug, getFiles } from '@/utils/mdx';
 
 export default function Blog({
-                               mdxSource,
-                               frontMatter,
-                             }: {
-  mdxSource: any
-  frontMatter: any
+  mdxSource,
+  frontMatter,
+}: {
+  mdxSource: any;
+  frontMatter: any;
 }): React.ReactElement {
-  return (
-    <BlogLayout frontMatter={frontMatter}>
-      <MDXRemote {...mdxSource} components={{ ...MDXComponents }} />
-    </BlogLayout>
-  );
+  if (frontMatter.published || process.env.NODE_ENV === 'development') {
+    return (
+      <BlogLayout frontMatter={frontMatter}>
+        <MDXRemote {...mdxSource} components={{ ...MDXComponents }} />
+      </BlogLayout>
+    );
+  }
+  return null;
 }
 
 export async function getStaticPaths(): Promise<any> {
