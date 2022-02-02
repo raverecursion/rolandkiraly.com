@@ -16,30 +16,26 @@ const info = (props: { colorMode: ColorMode }) => [
 
   {
     input: 'self.interests',
-    return: '["software-development", "neuroscience"]',
+    return: '["web dev", "biology", "neuroscience"]',
   },
   {
     input: 'self.hobbies',
-    return: '["extreme-sports"]',
+    return: '["hiking", "mountain-climbing"]',
   },
   {
     input: 'self.skills',
     return:
-      '[ "JavaScript","TypeScript", "React", "Next.JS", "Chakra-UI",,"Tailwind", "GraphQL", "SQL", "git"]',
+      '[ "JavaScript","TypeScript", "Python", "React", "Next.JS", "Chakra-UI", ,"Styled-Components","Tailwind", "SASS", "git"]',
   },
   {
     input: 'self.contactMe()',
     return: `
     ["<a style="${style(
-      props
+      props,
     )}" rel="noopener" href="https://www.linkedin.com/in/kiralyroland/">LinkedIn</a>", "<a style="${style(
-      props
-    )}" rel="noopener" href="https://github.com/innellea">Github</a>", <a style="${style(
-      props
-    )}" rel="noopener" href="mailto:contact@rolandkiraly.com">email</a>",]`,
+      props,
+    )}" rel="noopener" href="https://github.com/innellea">Github</a>"]`,
   },
 ];
 
 export default info;
-
-// <a href="mailto:webmaster@example.com">Jon Doe</a>.
