@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
-import { chakra, Flex, Stack, Text, useColorMode, useColorModeValue, VStack } from '@chakra-ui/react';
 import content from '@/data/aboutMe';
+
+import { chakra, Flex, Stack, Text, useColorMode, useColorModeValue, VStack } from '@chakra-ui/react';
+
 import styled from '@emotion/styled';
+
+import React, { useEffect } from 'react';
+
 import Statement from '../Statement';
 
 const StatusButton = styled(chakra.span)`
