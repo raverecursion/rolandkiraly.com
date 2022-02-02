@@ -56,10 +56,10 @@ export default function MyApp({
       />
       <ChakraProvider theme={theme}>
         <PlausibleProvider
-          domain="www.rolandkiraly.com"
+          domain="rolandkiraly.com"
           selfHosted
           trackOutboundLinks
-          enabled={process.env.NODE_ENV === 'production'}
+          enabled={process.env.NODE_ENV === 'development'}
           customDomain={'https://rolandKiraly.com'}
         >
           <QueryClientProvider client={queryClient}>

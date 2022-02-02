@@ -90,7 +90,7 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
           <Flex justifyContent="center">
             <Button
               as="a"
-              href="https://open.spotify.com/user/31xl7hwxkqrdf6xlt608i3kmg?si=XOKTjryTQdea1kF90ZkOfQ"
+              href="https://open.spotify.com/user/toobig4uu?si=6c5a688bc50647e4"
               variant="ghost"
               colorScheme="brand"
               size="lg"
@@ -128,17 +128,16 @@ function Spotify({ data, error }: SpotifyProps): React.ReactElement {
     </>
   );
 }
+const dev = process.env.NODE_ENV === 'development';
+export const server = dev
+  ? 'http://localhost:3000'
+  : `https://${process.env.VERCEL_URL}`;
 
 export async function getStaticProps(): Promise<{ props: SpotifyProps }> {
   let error = null;
   let data = null;
   try {
-    const response = await fetch(
-      `${
-        process.env.NEXT_PUBLIC_HOST ||
-        `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-      }/api/get-spotify-data`
-    );
+    const response = await fetch(`${server}/api/get-spotify-data`);
     if (response.status !== 200) {
       error = `There was an error: ${response.status}`;
     } else {
