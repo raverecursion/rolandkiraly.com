@@ -13,7 +13,10 @@ import MDXComponents from '@/components/MDXComponents';
 import { MDXProvider } from '@mdx-js/react';
 
 const queryClient = new QueryClient();
-export default function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
+export default function MyApp({
+  Component,
+  pageProps,
+}: AppProps): React.ReactElement {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     document.documentElement.lang = `en-GB`;
@@ -36,14 +39,8 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
   return (
     <>
       <DefaultSeo
-        defaultTitle='Roland Király'
-        titleTemplate='%s | Roland Király'
-        additionalLinkTags={[
-          {
-            rel: 'icon',
-            href: '/static/images/favicon.ico',
-          },
-        ]}
+        defaultTitle="Roland Király"
+        titleTemplate="%s | Roland Király"
         openGraph={{
           title: `Roland Király`,
           type: `website`,
@@ -55,11 +52,11 @@ export default function MyApp({ Component, pageProps }: AppProps): React.ReactEl
             },
           ],
         }}
-        description='Personal website and portfolio of Roland Király'
+        description="Personal website and portfolio of Roland Király"
       />
       <ChakraProvider theme={theme}>
         <PlausibleProvider
-          domain='rolandkiraly.com'
+          domain="rolandkiraly.com"
           selfHosted
           trackOutboundLinks
           enabled={process.env.NODE_ENV === 'production'}

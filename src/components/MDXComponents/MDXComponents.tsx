@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import { css } from '@emotion/react';
 import {
-  AspectRatio,
   Box,
-  BoxProps,
-  chakra,
-  ChakraProps,
-  Flex,
   Link as ChakraLink,
-  ListItem,
   Text,
-  UnorderedList,
   useColorMode,
+  Flex,
+  UnorderedList,
+  BoxProps,
   useColorModeValue,
+  chakra,
+  ListItem,
+  AspectRatio,
+  ChakraProps,
 } from '@chakra-ui/react';
 import LineHeading from '../LineHeading';
 import React from 'react';
@@ -34,15 +34,15 @@ export const CustomLink = (props: CustomLinkProps): JSX.Element => {
     return (
       <Link href={href} passHref>
         <ChakraLink
-          width='calc(100% + 28px)'
-          position='absolute'
+          width="calc(100% + 28px)"
+          position="absolute"
           ml={'-0.7em'}
-          height='full'
-          maxW='700px'
+          height="full"
+          maxW="700px"
           {...props}
-          cursor='pointer'
+          cursor="pointer"
           _after={{
-            content: '\'#\'',
+            content: "'#'",
             visibility: 'hidden',
 
             color: colorMode === 'light' ? 'gray.400' : 'gray.600',
@@ -63,8 +63,8 @@ export const CustomLink = (props: CustomLinkProps): JSX.Element => {
     <ChakraLink
       _hover={{ textDecoration: 'none' }}
       color={colorMode === 'light' ? 'blue.600' : 'blue.200'}
-      target='_blank'
-      rel='noopener noreferrer'
+      target="_blank"
+      rel="noopener noreferrer"
       {...props}
     />
   );
@@ -77,20 +77,31 @@ interface CustomImageProps {
 }
 
 export const CustomImage = ({
-                              alt,
-                              ratio,
-                              border,
-                              chakraWidth,
-                              ...props
-                            }: ImageProps & CustomImageProps): JSX.Element => {
+  alt,
+  ratio,
+  border,
+  chakraWidth,
+  layout,
+  ...props
+}: ImageProps & CustomImageProps): JSX.Element => {
   return (
-    <Flex direction='column' my={7}>
+    <Flex direction="column" my={7}>
       {ratio ? (
         <AspectRatio width={chakraWidth || 'full'} mx={'auto'} ratio={ratio}>
-          <Image className={`${border && 'border'}`} alt={alt} {...props} />
+          <Image
+            className={`${border && 'border'}`}
+            alt={alt}
+            layout={layout || 'fill'}
+            {...props}
+          />
         </AspectRatio>
       ) : (
-        <Image className={`${border && 'border'}`} alt={alt} {...props} />
+        <Image
+          className={`${border && 'border'}`}
+          layout={layout || 'responsive'}
+          alt={alt}
+          {...props}
+        />
       )}
       <style jsx global>{`
         .border {
@@ -98,7 +109,7 @@ export const CustomImage = ({
         }
       `}</style>
       <Text
-        textAlign='center'
+        textAlign="center"
         fontWeight={'semibold'}
         mt={2}
         color={useColorModeValue('gray.600', 'gray.400')}
@@ -110,7 +121,9 @@ export const CustomImage = ({
   ``;
 };
 
-export const CustomTitle = (props: { children: JSX.Element[] }): JSX.Element => {
+export const CustomTitle = (props: {
+  children: JSX.Element[];
+}): JSX.Element => {
   const title = props.children[0].props.parentName;
   const titleSize = {
     h1: ['2xl', '4xl'],
@@ -130,7 +143,11 @@ export const CustomTitle = (props: { children: JSX.Element[] }): JSX.Element => 
   );
 };
 
-export const CustomText = ({ children }: { children: React.ReactNode }): JSX.Element => {
+export const CustomText = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
   return (
     <Text fontSize={'lg'} mt={4}>
       {children}
@@ -138,24 +155,34 @@ export const CustomText = ({ children }: { children: React.ReactNode }): JSX.Ele
   );
 };
 
-export const CustomUnorderedList = ({ children }: { children: React.ReactNode }): JSX.Element => {
+export const CustomUnorderedList = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
   return (
-    <UnorderedList fontSize='lg' spacing={'4px'} mt={3}>
+    <UnorderedList fontSize="lg" spacing={'4px'} mt={3}>
       {children}
     </UnorderedList>
   );
 };
 
-export const CustomListItem = ({ children }: { children: React.ReactNode }): JSX.Element => {
+export const CustomListItem = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
   return (
-    <ListItem color={useColorModeValue('main.500', 'main.300')}>
-      <chakra.span color={useColorModeValue('black', 'white')}>{children}</chakra.span>
+    <ListItem color={useColorModeValue('brand.500', 'brand.300')}>
+      <chakra.span color={useColorModeValue('black', 'white')}>
+        {children}
+      </chakra.span>
     </ListItem>
   );
 };
 
 export const Padding = (props: BoxProps): JSX.Element => {
-  return <Box width='full' height='1px' {...props} />;
+  return <Box width="full" height="1px" {...props} />;
 };
 
 export const RemarkTitle = (props: BoxProps): JSX.Element => {
@@ -168,9 +195,9 @@ export const RemarkTitle = (props: BoxProps): JSX.Element => {
       color={useColorModeValue('gray.800', 'gray.200')}
       borderTopRadius={'xl'}
       bg={useColorModeValue('gray.200', 'gray.700')}
-      fontSize='sm'
+      fontSize="sm"
       fontFamily={'mono'}
-      fontWeight='bold'
+      fontWeight="bold"
       {...props}
     />
   );
@@ -188,7 +215,7 @@ export const CustomPre = (props: ChakraProps): JSX.Element => {
   return (
     <chakra.pre
       {...props}
-      borderRadius='xl'
+      borderRadius="xl"
       mt={8}
       mx={'-20px'}
       pt={5}
@@ -204,7 +231,7 @@ export const CustomPre = (props: ChakraProps): JSX.Element => {
           scrollPaddingBottom: '10px',
           scrollbarColor: useColorModeValue(
             'var(--chakra-colors-gray-300) var(--chakra-colors-gray-100)',
-            'var(--chakra-colors-gray-700) var(--chakra-colors-gray-900)',
+            'var(--chakra-colors-gray-700) var(--chakra-colors-gray-900)'
           ),
           scrollbarWidth: 'thin',
         }}
@@ -257,7 +284,7 @@ const lightCodeStyles = css`
 
   .token.function,
   .token.class-name {
-    color: var(--chakra-colors-main-600);
+    color: var(--chakra-colors-brand-600);
   }
 
   .token.property,
@@ -298,7 +325,7 @@ const darkCodeStyles = css`
 
   .token.function,
   .token.class-name {
-    color: var(--chakra-colors-main-300);
+    color: var(--chakra-colors-brand-300);
   }
 
   .token.property,

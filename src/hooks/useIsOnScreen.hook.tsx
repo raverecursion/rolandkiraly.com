@@ -1,17 +1,18 @@
 import React from 'react';
 
 export default function useIsOnscreen(
-  elementRef: React.MutableRefObject<undefined>,
-  defaultState = false,
-) {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  elementRef: any,
+  defaultState = false
+): any {
   const [isOnscreen, setIsOnscreen] = React.useState(defaultState);
 
   React.useEffect(() => {
     if (!elementRef.current) {
-      return undefined;
+      return null;
     }
 
-    const observer = new window.IntersectionObserver(entries => {
+    const observer = new window.IntersectionObserver((entries) => {
       const [entry] = entries;
 
       setIsOnscreen(entry.intersectionRatio > 0);

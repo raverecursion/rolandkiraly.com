@@ -35,7 +35,7 @@ const generateSparkle = (
   colors: string[][],
   minSize: number,
   maxSize: number,
-  generatePosition: (x: number) => Record<string, unknown>,
+  generatePosition: (x: number) => Record<string, unknown>
 ): SparkleType => {
   const size = random(minSize, maxSize);
 
@@ -65,24 +65,24 @@ interface SparklesProps {
 }
 
 const Sparkles = ({
-                    rate = 400,
-                    variance = 200,
-                    minSize = 10,
-                    maxSize = 20,
-                    colors = [
-                      ['#FFC700', 'var(--chakra-colors-yellow-300)'],
-                      ['#FFC700', 'var(--chakra-colors-yellow-300)'],
-                      ['var(--chakra-colors-purple-500)', 'var(--chakra-colors-purple-300)'],
-                      ['var(--chakra-colors-main-500)', 'var(--chakra-colors-main-300)'],
-                      ['var(--chakra-colors-pink-500)', 'var(--chakra-colors-pink-300)'],
-                    ],
-                    children,
-                    isToggleable,
-                    style = {},
-                    generatePosition = defaultGeneratePosition,
-                    delayBy = 0,
-                    ...delegated
-                  }: SparklesProps): JSX.Element => {
+  rate = 400,
+  variance = 200,
+  minSize = 10,
+  maxSize = 20,
+  colors = [
+    ['#FFC700', 'var(--chakra-colors-yellow-300)'],
+    ['#FFC700', 'var(--chakra-colors-yellow-300)'],
+    ['var(--chakra-colors-purple-500)', 'var(--chakra-colors-purple-300)'],
+    ['var(--chakra-colors-brand-500)', 'var(--chakra-colors-brand-300)'],
+    ['var(--chakra-colors-pink-500)', 'var(--chakra-colors-pink-300)'],
+  ],
+  children,
+  isToggleable,
+  style = {},
+  generatePosition = defaultGeneratePosition,
+  delayBy = 0,
+  ...delegated
+}: SparklesProps): JSX.Element => {
   const [sparkles, setSparkles] = React.useState(() => []);
   const [hasDelayElapsed, setHasDelayElapsed] = React.useState(delayBy === 0);
 
@@ -100,11 +100,16 @@ const Sparkles = ({
         return;
       }
 
-      const sparkle = generateSparkle(colors, minSize, maxSize, generatePosition);
+      const sparkle = generateSparkle(
+        colors,
+        minSize,
+        maxSize,
+        generatePosition
+      );
 
       const now = Date.now();
 
-      const nextSparkles = sparkles.filter(sp => {
+      const nextSparkles = sparkles.filter((sp) => {
         const delta = now - sp.createdAt;
         return delta < 1000;
       });
@@ -114,7 +119,7 @@ const Sparkles = ({
       setSparkles(nextSparkles);
     },
     shouldAnimate ? rate - variance : null,
-    shouldAnimate ? rate + variance : null,
+    shouldAnimate ? rate + variance : null
   );
 
   React.useEffect(() => {
@@ -122,7 +127,10 @@ const Sparkles = ({
       return;
     }
 
-    const timeoutId = window.setTimeout(() => setHasDelayElapsed(true), delayBy);
+    const timeoutId = window.setTimeout(
+      () => setHasDelayElapsed(true),
+      delayBy
+    );
 
     return () => {
       window.clearTimeout(timeoutId);
@@ -145,11 +153,11 @@ const Sparkles = ({
         cursor: isToggleable ? 'pointer' : 'default',
         textShadow: `0px 0px 10px ${useColorModeValue(
           'var(--chakra-colors-white)',
-          'var(--chakra-colors-gray-800)',
+          'var(--chakra-colors-gray-800)'
         )},
         1px 1px 3px ${useColorModeValue(
           'var(--chakra-colors-white)',
-          'var(--chakra-colors-gray-800)',
+          'var(--chakra-colors-gray-800)'
         )}`,
       }}
       {...delegated}
@@ -157,7 +165,11 @@ const Sparkles = ({
       {sparkles.map((sparkle: SparkleType) => (
         <Sparkle
           key={sparkle.id}
-          color={colorMode === 'light' ? sparkle.color[0] : sparkle.color[1] || sparkle.color[0]}
+          color={
+            colorMode === 'light'
+              ? sparkle.color[0]
+              : sparkle.color[1] || sparkle.color[0]
+          }
           size={sparkle.size}
           numOfPoints={sparkle.numOfPoints}
           style={sparkle.style}
@@ -169,11 +181,11 @@ const Sparkles = ({
 };
 
 const Sparkle = ({
-                   size,
-                   color,
-                   style,
-                   numOfPoints = 4,
-                 }: {
+  size,
+  color,
+  style,
+  numOfPoints = 4,
+}: {
   size: number;
   color: string;
   style: Record<string, unknown>;
@@ -186,7 +198,7 @@ const Sparkle = ({
 
   return (
     <SparkleWrapper style={style}>
-      <SparkleSvg width={size} height={size} viewBox='0 0 184 184' fill='none'>
+      <SparkleSvg width={size} height={size} viewBox="0 0 184 184" fill="none">
         <path d={path} fill={color} />
       </SparkleSvg>
     </SparkleWrapper>
