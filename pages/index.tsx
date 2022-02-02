@@ -53,7 +53,7 @@ export default function Home(): React.ReactElement {
                 // boxSize='250px'
                 src={profilePic}
                 // objectFit='cover'
-                alt='Roland Király'
+                alt='profile photo'
                 onLoad={() => setImageLoad(true)}
               />
             </Skeleton>
