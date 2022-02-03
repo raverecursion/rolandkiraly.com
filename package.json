@@ -21,8 +21,8 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@chakra-ui/icons": "1.0.15",
-    "@chakra-ui/react": "1.6.7",
+    "@chakra-ui/icons": "1.1.1",
+    "@chakra-ui/react": "1.8.1",
     "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
     "@mapbox/rehype-prism": "0.8.0",
