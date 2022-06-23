@@ -31,7 +31,7 @@
     "cross-env": "7.0.3",
     "date-fns": "2.23.0",
     "firebase-admin": "9.11.1",
-    "framer-motion": "4.1.17",
+    "framer-motion": "6.3.13",
     "gray-matter": "4.0.3",
     "mdx-prism": "0.3.4",
     "next-mdx-remote": "3.0.4",
