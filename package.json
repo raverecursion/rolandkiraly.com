@@ -50,7 +50,7 @@
     "remark-autolink-headings": "7.0.1",
     "remark-code-titles": "0.1.2",
     "remark-slug": "7.0.0",
-    "sharp": "0.30.0",
+    "sharp": "0.30.7",
     "vcards-js": "2.10.0"
   },
   "devDependencies": {
